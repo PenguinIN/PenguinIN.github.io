@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Android SDK</title>
+  <link rel="shortcut icon" href="https://penguinin.com/wp-content/uploads/2018/07/fav3.png">
+  <style>
+    img {
+      /* transform: scale(0.7); */
+      /* transform-origin: bottom left; */
+      max-width: 700px !important;
+      max-height: 1400px;
+    }
+
+    a {
+      text-align: left !important;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css" />
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI',
+        system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+  <style>
+    .task-list-item {
+      list-style-type: none;
+    }
+
+    .task-list-item-checkbox {
+      margin-left: -20px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body class="vscode-body vscode-light">
+  <div class="site-identity2" style="margin-bottom: 15px">
+    <a href="index.html" class="site-logo">
+      <img src="./img/logo.png" alt="Site Name" />
+      <h2 class="title">Penguin<span>in</span> Developer</h2>
+    </a>
+  </div>
+
+  <h1 id="android-documentation---v400">Android Documentation - v4.0.0</h1>
+  <h2 id="table-of-contents">Table of Contents</h2>
+
+  <div style="font-weight: bold;">
+    <p>
+      <a href="#sdk-and-sample-application-delivery">1 SDK and Sample Application Delivery
+      </a>
+    </p>
+    <p><a href="#sample-application">2 Sample Application </a></p>
+    <p>
+      <a href="#sdk-and-sample-app-configuration">3 SDK and Sample App Configuration</a>
+    </p>
+    <p>
+      <a href="#sdk:-methods-and-integration">4 SDK: Methods and Integration
+      </a>
+
+    <div style="margin-left: 10px;">
+      <p><a href="#isready">4.1 isReady</a></p>
+      <p><a href="#checkerror">4.2 CheckError</a></p>
+      <p><a href="#checkwarning">4.4 CheckWarning</a></p>
+      <p><a href="#geterrormessage">4.5 GetErrorMessage</a></p>
+      <p><a href="#getwarningmessage">4.6 GetWarningMessage</a></p>
+      <p><a href="#setmode">4.7 SetMode</a></p>
+      <p><a href="#getmyposition">4.8 GetMyPosition</a></p>
+      <p><a href="#projectedpoint">4.9 ProjectedPoint</a></p>
+      <p><a href="#setfloor">4.10 SetFloor</a></p>
+      <p><a href="#startnavigation">4.11 StartNavigation</a></p>
+      <p><a href="#stopnavigation">4.12 StopNavigation</a></p>
+      <p><a href="#settestmode">4.13 SetTestMode</a></p>
+      <p><a href="#settestnavpath">4.14 SetTestNavPath</a></p>
+      <p><a href="#getversion">4.15 GetVersion</a></p>
+      <p><a href="#setdataservice">4.16 SetDataService</a></p>
+      <p><a href="#setpositionservice">4.17 SetPositionService</a></p>
+      <p><a href="#setstepdetectionenabled">4.18 SetStepDetectionEnabled</a></p>
+      <p><a href="#setsimulationmodeenabled">4.19 SetSimulationModeEnabled</a></p>
+      <p><a href="#setvenueid">4.20 SetVenueID</a></p>
+      <p>
+        <a href="#getinitializationprogress">4.21 GetInitializationProgress</a>
+      </p>
+      <p><a href="#getcurrentnavigationpath">4.22 GetCurrentNavigationPath</a></p>
+      <p><a href="#isnavigationerrorpath">4.23 isNavigationErrorPath</a></p>
+      <p><a href="#isnavigationfloorerror">4.24 isNavigationFloorError</a></p>
+      <p><a href="#setwifipositioningenable">4.25 SetWiFiPositioningEnable</a></p>
+      <p><a href="#setblepositioningenable">4.26 SetBLEPositioningEnable</a></p>
+      <p><a href="#getconnectivitystatus">4.27 GetConnectivityStatus</a></p>
+      <p><a href="#getfloortransitionstatus">4.28 GetFloorTransitionStatus</a></p>
+      <p><a href="#checktrustedfloor">4.29 CheckTrustedFloor</a></p>
+      <p>
+        <a href="#getpositionrequesterrormessage">4.30 GetPositionRequestErrorMessage</a>
+      </p>
+      <p><a href="#checkresetsdkrequest">4.31 CheckResetSDKRequest</a></p>
+    </div>
+    </p>
+
+    <p>
+      <a href="#sdk-integration-flow-chart">5 SDK Integration Flow Chart</a>
+    </p>
+  </div>
+  <h1 id="sdk-and-sample-application-delivery" class="custom-header">
+    SDK and Sample Application Delivery
+  </h1>
+  <p>
+    At the bottom of this page, you will find a link to download the SDK as a
+    <strong>.aar</strong> file and the sample application as a build-able
+    source code to generate the required <strong>.apk</strong> file. This file
+    can be integrated in Android Studio via Gradle file. Please note that the
+    .aar file needs to be integrated into Lib (Library) folder, then in the
+    project Build.gradle file.
+
+    To Download the SDK and Sample app <a
+      href="https://penguinin-my.sharepoint.com/:f:/p/devsupport/Euj7LNk2fkBDrTWIULPYhYYBRkE1l14k5g-A0l_PtEH07Q?e=5Kf9YL"
+      style="display: inline;" class="fqalink">click here.</a>
+
+  </p>
+  <h1 id="sample-application" class="custom-header">Sample Application</h1>
+  <p>
+    The sample application has two modes of operation: (1) <a style="display: inline;" href="simulation.html">simulation
+      mode</a> and
+    (2) live mode. In <a style="display: inline;" href="simulation.html">simulation mode</a> , the application runs a
+    pre-configured
+    scenario with predetermined list of positions. In live mode, the position
+    is fetched from the position engine services and of course requires
+    complete BLE beacon roll-out and site calibration data to have been
+    completed. In both modes, connectivity to the position engine service and
+    the presence of at least one BLE beacon is required.
+  </p>
+  <p>The steps below explain how to run the sample application.</p>
+  <ul>
+    <li>
+      <p>Install Sample App and Grant all permissions Manually:</p>
+      <img src="img/Permission.jpeg" style="zoom: 30%" />
+      <br />
+    </li>
+    <li>
+      <p>
+        Run the sample app, and then click on Load Data:
+        <br />
+        <img src="img/Login.jpeg" style="zoom: 33%; margin-top: 25px" />
+        <img src="img/DataLoaded.jpeg" style="zoom: 33%" />
+        <br />
+      </p>
+    </li>
+    <li>
+      <p>
+        Make sure that the data is loaded to the SQLite tables.
+        <br />
+        <img src="img/DB.jpeg" style="zoom: 50%" />
+        <br />
+      </p>
+    </li>
+    <li>
+      <p>After Loading data successfully, click on Login button.</p>
+    </li>
+    <li>
+      <p>
+        After login, the map appears with the blue dot that shows the current
+        user location. This is blue dot is based on a simulated position.
+        <br />
+        <img src="img/Main.jpeg" style="zoom: 67%; width: 400px;" />
+        <br />
+      </p>
+      <p>
+        A single hardcoded and highlighted POI has defined to demonstrate the
+        navigation example. Simply click on the highlighted POI zone on the
+        map and click on start navigation.
+        <br />
+      </p>
+    </li>
+  </ul>
+  <h1 id="sdk-and-sample-app-configuration" class="custom-header">
+    SDK and Sample App Configuration
+  </h1>
+  <p>
+    It is likely that during the development cycle, parameters for the SDK and
+    the sample application will change. To change the
+    <strong>SDK configuration</strong> from SDK folder open the
+    com.penguinin_sampleUtil/SDKParameters, and you can start modifying the
+    following parameters:
+  </p>
+  <ul>
+    <li>Data Server IP.</li>
+    <li>Data Service Name.</li>
+    <li>Position Server IP.</li>
+    <li>Position Service Name.</li>
+    <li>Fix Venue Value.</li>
+    <li>
+      Use Https Connections Flag:
+      <ul>
+        <li>True: Https.</li>
+        <li>False: Http.</li>
+      </ul>
+    </li>
+    <li>
+      Simulation Mode flag:
+      <ul>
+        <li>True: Simulation scenarios run.</li>
+        <li>False: Live BLE scan run.</li>
+      </ul>
+    </li>
+    <li>
+      Support Multi Floor Flag:
+      <ul>
+        <li>True: Use Multi Floor configurations.</li>
+        <li>False: Use Single Floor configurations.</li>
+      </ul>
+    </li>
+  </ul>
+  <p>
+    To change the <strong>PoI Data</strong> from Sample app folder open the
+    com.penguinin_sampleData.Model.PoI\POI \Contructor, and you can start
+    modifying the following paramters:
+  </p>
+  <ul>
+    <li>
+      <p>ID.</p>
+    </li>
+    <li>
+      <p>Floor ID.</p>
+    </li>
+    <li>
+      <p>Name.</p>
+    </li>
+    <li>
+      <p>Description</p>
+    </li>
+    <li>
+      <p>Zone Points.</p>
+      <p>
+        <strong>Two different definitions for multi and single floor</strong>
+        <br />
+        <img src="img/POIs.png" alt="" />
+        <br />
+      </p>
+    </li>
+  </ul>
+  <p>
+    To change the <strong>Username</strong> from Sample app folder open the o
+    com.penguinin_sample\MainActivity\onCreate, and you can start modifying
+    the following:
+  </p>
+  <ul>
+    <li>
+      <p>Username for live mode.</p>
+    </li>
+    <li>
+      <p>Username for simulation multi floor mode.</p>
+    </li>
+    <li>
+      <p>Username for simulation single floor mode.</p>
+      <p>
+        <img src="img/Username.png" alt="" />
+        <br />
+      </p>
+    </li>
+  </ul>
+  <h1 id="sdk-methods-and-integration" class="custom-header">
+    SDK: Methods and Integration
+  </h1>
+  <p>
+    In this section we present the methods availed to the application
+    developer through our SDK followed by best practices to integrate it
+    within a mobile application.
+  </p>
+  <br />
+  <h2 id="initialize">Initialize</h2>
+  <p>
+    Returns initialization success or failure as Boolean value.
+    <br />
+  </p>
+  <h3 id="operation">Operation</h3>
+  <p>These steps describe the process of initialization:</p>
+  <ul>
+    <li>Validate OS support and server connectivity.</li>
+    <li>Initialize input sources for positioning platform.</li>
+    <li>
+      Detect current venue and get venue data (will use data API):
+      <ul>
+        <li>Venue specific positioning information</li>
+        <li>Floors details</li>
+        <li>Edges details</li>
+      </ul>
+    </li>
+    <li>Perform device specific calibration</li>
+    <li>Establish connectivity requirements.</li>
+    <li>
+      Save the results and Log for analytics (if supported)
+      <br />
+    </li>
+  </ul>
+  <h3 id="parameters">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">UserID</td>
+        <td style="text-align: left">Front End UserID</td>
+        <td style="text-align: center">String</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">IPList</td>
+        <td style="text-align: left">
+          Penguin Data API IP address (mandatory)<br />Penguin Position API IP
+          address (mandatory)<br />Third party API IP address (optional)
+        </td>
+        <td style="text-align: center">List(String)</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">context</td>
+        <td style="text-align: left">App main context</td>
+        <td style="text-align: center">Context</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">activity</td>
+        <td style="text-align: left">App main activity</td>
+        <td style="text-align: center">Activity</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">UseNoneIMU</td>
+        <td style="text-align: left">Enable Just JAR None IMU calculation</td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Result</td>
+        <td style="text-align: left">
+          Success: 1 or Fail: 0<br />Error Code.<br />Warning Code.<br />separated
+          by “_”<br />ex: “1_0_0” or “0_1_2”
+        </td>
+        <td style="text-align: center">String</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="isready">isReady</h2>
+  <p>
+    Returns a Boolean value indication, that all needed requirements are ready
+    and you can start calling other methods.
+    <br />
+  </p>
+  <h3 id="parameters-1">Parameters</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+  </p>
+  <h3 id="response-1">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Ready</td>
+        <td style="text-align: left">Ready for calling other methods</td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 id="checkerror" class="custom-subheading">CheckError</h2>
+  <p>
+    Returns current error code if it exists.
+    <br />
+  </p>
+  <h3 id="parameters-2">Parameters</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+  </p>
+  <h3 id="response-2">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">ErrorCode</td>
+        <td style="text-align: left">Current Error Code (0: No Errors)</td>
+        <td style="text-align: center">Int</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+
+  <h2 id="checkwarning" class="custom-subheading">CheckWarning</h2>
+  <p>
+    Returns current warning code if it exists.
+    <br />
+  </p>
+  <h3 id="parameters-3">Parameters</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+  </p>
+  <h3 id="response-3">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">WarningCode</td>
+        <td style="text-align: left">
+          Current Warning Code (0: No Warnings)
+        </td>
+        <td style="text-align: center">Int</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 id="geterrormessage" class="custom-subheading">GetErrorMessage</h2>
+  <p>
+    Returns error message from Error Code Look Up table.
+    <br />
+  </p>
+  <h3 id="parameters-4">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">ID</td>
+        <td style="text-align: left">Error Code</td>
+        <td style="text-align: center">Int</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response-4">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">ErrorMessage</td>
+        <td style="text-align: left">Error Message</td>
+        <td style="text-align: center">String</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="error-code-look-up">Error Code Look Up:</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>OS not supported</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Signal Lost</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Venues details Import Error</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Floors details Import Error</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Settings Error</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Map North angle calculation Error</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>Edges details Import Error</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Wi-Fi Permission OFF</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>BLE Permission OFF</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Device RF not available</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Venue RF not available</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Bluetooth not enabled</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>Sensors Initial Error</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>GPS Disabled</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="getwarningmessage">GetWarningMessage</h2>
+  <p>
+    Returns warning message from Warning Code Look Up table.
+    <br />
+  </p>
+  <h3 id="parameters-5">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">ID</td>
+        <td style="text-align: left">Warning Code</td>
+        <td style="text-align: center">Int</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response-5">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">WarningMessage</td>
+        <td style="text-align: left">Warning Message</td>
+        <td style="text-align: center">String</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <table>
+    <thead>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Accelerometer sensor not available</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Magnetometer sensor not available</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Magnetometer accuracy low</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Gyro sensor not available</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Orientation sensor not available</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Barometer sensor not available</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="setmode">SetMode</h2>
+  <p>Set the position mode and scanning time frequency:</p>
+  <ul>
+    <li>
+      Background:
+      <ul>
+        <li>Low frequency position scanning for logging and analytics.</li>
+      </ul>
+    </li>
+    <li>
+      Freestyle:
+      <ul>
+        <li>
+          High frequency position scanning for trusted position on the venue.
+          This mode assumes that the user is not wayfinding between a known
+          source and a destination POI.
+        </li>
+      </ul>
+    </li>
+    <li>
+      Navigation:
+      <ul>
+        <li>
+          High frequency position scanning for trusted position while
+          navigating to a known destination with a know route already
+          identified.
+          <br />
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h3 id="parameters-6">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">ModeID</td>
+        <td style="text-align: left">BackGround, FreeStyle, Navigation</td>
+        <td style="text-align: center">Int</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">TimePeriod</td>
+        <td style="text-align: left">Time Period in ms</td>
+        <td style="text-align: center">Int</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response-6">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Success</td>
+        <td style="text-align: left">Updated the mode successfully</td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="modes">Modes</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">ID</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Scan Time (milliseconds)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">1</td>
+        <td style="text-align: left">Background (Default)</td>
+        <td style="text-align: center">10000</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">2</td>
+        <td style="text-align: left">Free Style</td>
+        <td style="text-align: center">2000</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">3</td>
+        <td style="text-align: left">Navigation</td>
+        <td style="text-align: center">2000</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="getmyposition">GetMyPosition</h2>
+  <p>
+    Returns last detected position concatenated together with &quot;_&quot;
+    separator:
+  </p>
+  <ul>
+    <li>Current Floor ID.</li>
+    <li>Position point (X, Y).</li>
+    <li>Accuracy circle radius in pixels.</li>
+    <li>Current Edge ID.</li>
+  </ul>
+  <p><strong>Recommendation:</strong></p>
+  <p>
+    This method provides an update on the position of the mobile application
+    user. It is not recommended to call it with high frequency. The
+    recommended value is 500msec-2000msec and should be adjusted according to
+    the desired UI behavior.
+    <br />
+  </p>
+  <h3 id="operation-1">Operation</h3>
+  <ul>
+    <li>
+      Concatenate FloorID, X, Y, Accuracy Circle Radius , Current Edge ID
+      together with &quot;_&quot; separator:
+      <ul>
+        <li>
+          Ex:
+          <ul>
+            <li>Current Floor ID: 2.</li>
+            <li>My Position (X, Y): (3000, 5100).</li>
+            <li>Accuracy radius in pixels: 120.</li>
+            <li>Current Edge ID: 150.</li>
+            <li>
+              Result:
+              <ul>
+                <li>
+                  2_3000_5100_120_150<br />
+                  <br />
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <h3 id="parameters-7">Parameters</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+  </p>
+  <h3 id="response-7">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Position</td>
+        <td style="text-align: left">
+          FloorID, X, Y, Accuracy Circle Radius , Current Edge ID<br />Concatenated
+          together with &quot;_&quot; separator
+        </td>
+        <td style="text-align: center">String</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="projectedpoint">ProjectedPoint</h2>
+  <p>
+    Projects any point (X, Y) (i.e. chosen from the map or any other source)
+    onto the defined edges. Use of such point depends on the enabled mode:
+    background, freestyle, navigation.
+    <br />
+  </p>
+  <h3 id="operation-2">Operation</h3>
+  <ul>
+    <li>
+      Load requested floor edges list then project the requested MapPoint.
+    </li>
+    <li>
+      Returns the projected point (X,Y)
+      <br />
+    </li>
+  </ul>
+  <h3 id="parameters-8">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">MapPoint</td>
+        <td style="text-align: left">Requested Point (X,Y)</td>
+        <td style="text-align: center">Point</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">FloorID</td>
+        <td style="text-align: left">Requested Floor ID</td>
+        <td style="text-align: center">Int</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response-8">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">ProjectedPoint</td>
+        <td style="text-align: left">
+          The Projected MapPoint on Requested Floor Edges
+        </td>
+        <td style="text-align: center">Point</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="setfloor">SetFloor</h2>
+  <p>
+    Set current floor ID.
+    <br />
+  </p>
+  <h3 id="operation-3">Operation</h3>
+  <ul>
+    <li>Set the current Floor ID.</li>
+    <li>
+      Request new position within the floor id to start new positioning area.
+      <br />
+    </li>
+  </ul>
+  <h3 id="parameters-9">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">FloorID</td>
+        <td style="text-align: left">Requested Floor ID</td>
+        <td style="text-align: center">Int</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response-9">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Success</td>
+        <td style="text-align: left">New Floor ID saved successfully</td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="startnavigation">StartNavigation</h2>
+  <p>
+    Start positioning on the given navigation path.
+    <br />
+  </p>
+  <h3 id="operation-4">Operation</h3>
+  <ul>
+    <li>Enable Navigation Mode.</li>
+    <li>
+      Set Navigation path edges as projection edges list.
+      <br />
+    </li>
+  </ul>
+  <h3 id="parameters-10">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">PathEdges</td>
+        <td style="text-align: left">Navigation path edges list</td>
+        <td style="text-align: center">List(Edge)</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response-10">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Success</td>
+        <td style="text-align: left">Navigation mode enabled successfully</td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="edge-data-structure">Edge data structure:</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>id</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>venueId</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>floorId</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>p1VenueID</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>p1FloorID</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>p1</td>
+        <td>Point</td>
+      </tr>
+      <tr>
+        <td>p2VenueID</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>p2FloorID</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>p2</td>
+        <td>Point</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="stopnavigation">StopNavigation</h2>
+  <p>
+    Stop navigation positioning and go back to freestyle mode positioning.
+    <br />
+  </p>
+  <h3 id="operation-5">Operation</h3>
+  <ul>
+    <li>Disable navigation mode and return to the previous mode.</li>
+    <li>
+      Set all edges as projection edges list.
+      <br />
+    </li>
+  </ul>
+  <h3 id="parameters-11">Parameters</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+  </p>
+  <h3 id="response-11">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Success</td>
+        <td style="text-align: left">
+          Navigation mode disabled successfully
+        </td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="settestmode">SetTestMode</h2>
+  <p>
+    Set the test position mode and scanning time frequency.
+    <br />
+  </p>
+  <h3 id="parameters-12">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">FileName</td>
+        <td style="text-align: left">
+          Point’s Source text file name at Root destination
+        </td>
+        <td style="text-align: center">String</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">TimePeriod</td>
+        <td style="text-align: left">Time Period in ms</td>
+        <td style="text-align: center">Int</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">NoneIMU</td>
+        <td style="text-align: left">Enable Just JAR None IMU calculation</td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">isFileSimulation</td>
+        <td style="text-align: left">
+          Use the Files as Simulation Points Source
+        </td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response-12">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Success</td>
+        <td style="text-align: left">Updated the mode successfully</td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="settestnavpath">SetTestNavPath</h2>
+  <p>
+    Set the test <strong>navigation</strong> position mode and scanning time
+    frequency.
+    <br />
+  </p>
+  <h3 id="parameters-13">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">FileName</td>
+        <td style="text-align: left">
+          Navigation Path ordered edges Source text file name at Root
+          destination
+        </td>
+        <td style="text-align: center">String</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">PointsFileName</td>
+        <td style="text-align: left">
+          Point’s Source text file name at Root destination
+        </td>
+        <td style="text-align: center">String</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">TimePeriod</td>
+        <td style="text-align: left">Time Period in ms</td>
+        <td style="text-align: center">Int</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">NoneIMU</td>
+        <td style="text-align: left">Enable Just JAR None IMU calculation</td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response-13">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Navigation Edges List</td>
+        <td style="text-align: left">File’s Edges list</td>
+        <td style="text-align: center">List(Edge)</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="edge-data-structure-1">Edge data structure:</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>id</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>venueId</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>floorId</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>p1VenueID</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>p1FloorID</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>p1</td>
+        <td>Point</td>
+      </tr>
+      <tr>
+        <td>p2VenueID</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>p2FloorID</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>p2</td>
+        <td>Point</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="getversion">GetVersion</h2>
+  <p>
+    Returns SDK’s current version number.
+    <br />
+  </p>
+  <h3 id="parameters-14">Parameters</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+  </p>
+  <h3 id="response-14">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Version</td>
+        <td style="text-align: left">Returns version’s number</td>
+        <td style="text-align: center">String</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="setdataservice">SetDataService</h2>
+  <p>
+    Sets data API service name.
+    <br />
+  </p>
+  <h3 id="parameters-15">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">ServiceName</td>
+        <td style="text-align: left">-</td>
+        <td style="text-align: center">String</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response-15">Response</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+    <br />
+    <br />
+  </p>
+  <h2 class="custom-subheading" id="setpositionservice">SetPositionService</h2>
+  <p>
+    Sets position service name.
+    <br />
+  </p>
+  <h3 id="parameters-16">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">ServiceName</td>
+        <td style="text-align: left">-</td>
+        <td style="text-align: center">String</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response-16">Response</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+    <br />
+    <br />
+  </p>
+  <h2 id="setstepdetectionenabled" class="custom-subheading">SetStepDetectionEnabled</h2>
+  <p>
+    Enables positioning dependency on steps.
+    <br />
+  </p>
+  <h3 id="parameters-17">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">isEnabled</td>
+        <td style="text-align: left">-</td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response-17">Response</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+    <br />
+    <br />
+  </p>
+  <h2 id="setsimulationmodeenabled" class="custom-subheading">SetSimulationModeEnabled</h2>
+  <p>
+    Enables positioning simulation mode.
+    <br />
+  </p>
+  <h3 id="parameters-18">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">isEnabled</td>
+        <td style="text-align: left">-</td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">isFileSimulation</td>
+        <td style="text-align: left">
+          Use the Files as Simulation Points Source
+        </td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response-18">Response</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+    <br />
+    <br />
+  </p>
+  <h2 id="setvenueid" class="custom-subheading">SetVenueID</h2>
+  <p>
+    Sets positioning venue ID.
+    <br />
+  </p>
+  <h3 id="parameters-19">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">ID</td>
+        <td style="text-align: left">
+          In case used value was “-1”; it will detect the venue where user is
+          located.<br />
+          Otherwise, if sent specific venue ID, it will get data for the sent
+          venue ID.
+        </td>
+        <td style="text-align: center">Int</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response-19">Response</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+  </p>
+  <br />
+  <br />
+  <h2 id="getinitializationprogress" class="custom-subheading">GetInitializationProgress</h2>
+  <p>
+    Returns SDK initialization progress status.
+    <br />
+  </p>
+  <h3 id="parameters-20">Parameters</h3>
+  <p><strong>N/A</strong></p>
+  <h3 id="response-20">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Status</td>
+        <td style="text-align: left">-</td>
+        <td style="text-align: center">Int</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="initialization-progress-code-look-up">
+    Initialization Progress Code Look Up:
+  </h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>-1</td>
+        <td>No Beacons found till now</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>Bluetooth &amp; Sensors initialization</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Venue Detection</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Loading Venue Data (Floors &amp; Edges)</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="getcurrentnavigationpath">GetCurrentNavigationPath</h2>
+  <p>
+    Returns SDK current navigation path (Venue, Floor, Edges, List, etc.).
+    <br />
+  </p>
+  <h3 id="parameters-21">Parameters</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+  </p>
+  <h3 id="response-21">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Navigation Sub Path</td>
+        <td style="text-align: left">SDK Current navigation Sub Path</td>
+        <td style="text-align: center">NavigationSubPath</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="navigationsubpath-data-types">NavigationSubPath data types:</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">SubPathsSize</td>
+        <td style="text-align: left">Int</td>
+        <td style="text-align: center">all navigation sub paths count</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">SubPathIndex</td>
+        <td style="text-align: left">Int</td>
+        <td style="text-align: center">
+          Current index of all navigation sub paths list
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: left">VenueID</td>
+        <td style="text-align: left">Int</td>
+        <td style="text-align: center">Current Path Venue ID</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">FloorID</td>
+        <td style="text-align: left">Int</td>
+        <td style="text-align: center">Current Path Floor ID</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">FirstEdge</td>
+        <td style="text-align: left">Edge</td>
+        <td style="text-align: center">Current Path First Edge</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">NextEdge</td>
+        <td style="text-align: left">Edge</td>
+        <td style="text-align: center">Next Path Edge</td>
+      </tr>
+      <tr>
+        <td style="text-align: left">NavigationPath</td>
+        <td style="text-align: left">List(Edge)</td>
+        <td style="text-align: center">Current Sub path List of Edges</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="edge-data-structure-2">Edge data structure:</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Attribute</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>id</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>venueId</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>floorId</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>p1VenueID</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>p1FloorID</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>p1</td>
+        <td>Point</td>
+      </tr>
+      <tr>
+        <td>p2VenueID</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>p2FloorID</td>
+        <td>Int</td>
+      </tr>
+      <tr>
+        <td>p2</td>
+        <td>Point</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="isnavigationerrorpath">isNavigationErrorPath</h2>
+  <p>
+    Returns navigation error path flag.
+    <br />
+  </p>
+  <h3 id="parameters-22">Parameters</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+  </p>
+  <h3 id="response-22">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Error Path</td>
+        <td style="text-align: left">-</td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="isnavigationfloorerror">isNavigationFloorError</h2>
+  <p>
+    Returns flag that your position floor is out of all navigation path.
+    <br />
+  </p>
+  <h3 id="parameters-23">Parameters</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+  </p>
+  <h3 id="response-23">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Navigation Floor Error Flag</td>
+        <td style="text-align: left">
+          Current Floor is out of all navigation path
+        </td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="setwifipositioningenable">SetWiFiPositioningEnable</h2>
+  <p>
+    Enables or disables <strong>Wi-Fi</strong> positioning.
+    <br />
+  </p>
+  <h3 id="parameters-24">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Enable</td>
+        <td style="text-align: left">-</td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response-24">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Success</td>
+        <td style="text-align: left">-</td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="setblepositioningenable">SetBLEPositioningEnable</h2>
+  <p>
+    Enables or disables <strong>BLE</strong> positioning.
+    <br />
+  </p>
+  <h3 id="parameters-25">Parameters</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Parameters</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Enable</td>
+        <td style="text-align: left">-</td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="response-25">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">Success</td>
+        <td style="text-align: left">-</td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="getconnectivitystatus">GetConnectivityStatus</h2>
+  <p>
+    Returns Position Server Connectivity Status.
+    <br />
+  </p>
+  <h3 id="parameters-26">Parameters</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+  </p>
+  <h3 id="response-26">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">StatusCode</td>
+        <td style="text-align: left">-</td>
+        <td style="text-align: center">Int</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="error-code-look-up-1">Error Code Look Up:</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Server Not Connected</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Week or Poor Connection</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Good Connection</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Excellent Connection</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Empty BLE Scan (Low BLE Coverage)</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="getfloortransitionstatus">GetFloorTransitionStatus</h2>
+  <p>
+    Returns Floor Transition Status.
+    <br />
+  </p>
+  <h3 id="parameters-27">Parameters</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+  </p>
+  <h3 id="response-27">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">StatusCode</td>
+        <td style="text-align: left">-</td>
+        <td style="text-align: center">Int</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <h3 id="error-code-look-up-2">Error Code Look Up:</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Value</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0</td>
+        <td>No Transition – Same Floor</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Transition Using Escalator – Moving Up</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Transition Using Escalator – Moving Down</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Transition Using Elevator – Moving Up</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Transition Using Elevator – Moving Down</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="checktrustedfloor">CheckTrustedFloor</h2>
+  <p>
+    Returns Position engine’s Floor Trusted Flag.
+    <br />
+  </p>
+  <h3 id="parameters-28">Parameters</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+  </p>
+  <h3 id="response-28">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">TrustedStatus</td>
+        <td style="text-align: left">
+          Ask User to select his current floor if not trusted
+        </td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 class="custom-subheading" id="getpositionrequesterrormessage">GetPositionRequestErrorMessage</h2>
+  <p>
+    Returns error message that received from position engine.
+    <br />
+  </p>
+  <h3 id="parameters-29">Parameters</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+  </p>
+  <h3 id="response-29">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">PositionEngineMessageError</td>
+        <td style="text-align: left">
+          Same error message that received from position engine
+        </td>
+        <td style="text-align: center">String</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <h2 id="checkresetsdkrequest">CheckResetSDKRequest</h2>
+  <p>
+    Returns flag that you must reset SDK to continue positioning.
+    <br />
+  </p>
+  <h3 id="parameters-30">Parameters</h3>
+  <p>
+    <strong>N/A</strong>
+    <br />
+  </p>
+  <h3 id="response-30">Response</h3>
+  <table>
+    <thead>
+      <tr>
+        <th style="text-align: left">Value</th>
+        <th style="text-align: left">Description</th>
+        <th style="text-align: center">Value Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="text-align: left">resetSDKFlag</td>
+        <td style="text-align: left">
+          Positioning will stop if reset SDK flag is true.
+        </td>
+        <td style="text-align: center">Boolean</td>
+      </tr>
+    </tbody>
+  </table>
+  <br />
+  <br />
+  <br />
+  <h1 id="sdk-integration-flow-chart" class="custom-header">
+    SDK Integration Flow Chart
+  </h1>
+  <p>
+    The SDK Integration flow charts provided below help developers with the
+    SDK integration process. They show each step of the integration. The three
+    flow charts show the initialization, the free style and the navigation
+    mode.
+    <br />
+    <br />
+  </p>
+  <h2 id="initialization-flow-chart">Initialization Flow Chart</h2>
+  <br />
+  <p>
+    <img src="img/image2.png" alt="" />
+    <br />
+  </p>
+  <h2 id="free-style-get-position-flow-chart">
+    Free Style/ Get Position Flow Chart
+  </h2>
+  <br />
+  <p>
+    <img src="img/image3.png" alt="" />
+    <br />
+    <br />
+  </p>
+  <h2 id="navigation-mode-flow-chart">Navigation Mode Flow Chart</h2>
+  <br />
+  <p>
+    <img src="img/image4.png" alt="" />
+    <br />
+    <br />
+  </p>
+
+
+  <a href="faq.html" class="fqalink">PenguinIN's FAQ</a>
+  <h2 id="for-any-questions-and-comments-please-send-us-a-message-to-infopenguinincom">
+    For any questions and comments, please send us a message to
+    <strong><a href="mailto:support@penguinin.com" style="display: inherit;">support@penguinin.com</a></strong>
+  </h2>
+</body>
+
+</html>

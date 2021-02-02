@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="shortcut icon" href="https://penguinin.com/wp-content/uploads/2018/07/fav3.png">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap"
+  rel="stylesheet">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap"
+  rel="stylesheet">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+
+</style>
+
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PenguinIN Developer</title>
+
+</head>
+
+<body>
+  <div class="site-identity">
+
+    <a href="index.html" class="site-logo">
+      <img src="./img/logo.png" alt="Site Name" />
+      <h2 class="title">Penguin<span>in</span> Developer</h2>
+    </a>
+  </div>
+
+  <h1 id="introduction"><strong>Introduction</strong></h1>
+  <p>The PenguinIN indoor wayfinding solution (PenNav) consists of a fully managed, cloud-hosted positioning engine and
+    an
+    SDK which is to be integrated within a venue’s mobile app. It enables visitors to access wayfinding functionality
+    from
+    the comfort of their smartphones.</p>
+  <p>In addition to wayfinding, PenNav offers application programming interface (API) to support application developers
+    enrich their applications with more features such as location-based messaging, and indoor analytics.</p>
+  <p>The diagram below provides an overview of the components of our indoor navigation solution.</p>
+  <p> <span class="imghome-container">
+      <!-- Inline parent element -->
+
+      <img class="homeimg" src="./img/overalldiagram.jpg" alt="">
+    </span>
+  </p>
+  <ul>
+    <li>The Bluetooth Low Energy (BLE) beacons are assumed to be already in place for during in-field testing. For early
+      testing, having a single beacon is enough.</li>
+    <li>The mobile application: this is handled by the 3rd party app developer building the mobile application for the
+      client. The mobile application is responsible for all UI features including handling directory listing, display of
+      location-based messages, display of the route information, listing navigation instructions, drawing the location –
+      as conveyed by the SDK – on the map and all map functions including zoom, pan and rotate operations. To aid the
+      3rd party app developers, PenguinIN provides, a sample application for both Android and iOS</li>
+    <li>Mobile SDK: provides filtered, ready-to-use position information to the application layer.</li>
+    <li>Position Engine: cloud-hosted service responsible for calculating the location and sharing it with the SDK. The
+      mobile application must be able to reach this service in order for the an up-to-date position to be established.
+    </li>
+    <li>Application Programming Interface: information required by 3rd party application developers is made available
+      through an API.</li>
+  </ul>
+
+
+  <div class="wrapper" style="text-align: center;width:auto;margin:0 auto">
+
+
+    <div class="buttonlink" style="display: inline-block;"><a href="integration_faq_sdk.html"
+        style="display: flex; align-items: center; justify-content: space-around; ">
+        <span>SDK</span>
+        <img src="./img/sdk2.jpg" alt="Site Name" style="max-width: 15px;" />
+      </a></div>
+
+
+    <div class="buttonlink" style="display: inline-block;"><a
+        href="https://app.swaggerhub.com/apis-docs/Penguin-IN/PenNav/0.2"
+        style="display: flex; align-items: center; justify-content: space-around; ">
+        <span>Swagger</span>
+        <img src="./img/swagger.png" alt="Site Name" style="max-width: 15px;" />
+      </a></div>
+
+  </div>
+  <a href="faq.html" class="fqalink">PenguinIN's FAQ</a>
+  <h2 id="for-any-questions-and-comments-please-send-us-a-message-to-infopenguinincom">
+    For any questions and comments, please send us a message to
+    <strong><a href="mailto:support@penguinin.com" style="display: inherit;">support@penguinin.com</a></strong>
+  </h2>
+</body>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"></script>
+<header class="site-header">
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<link rel="shortcut icon" href="https://penguinin.com/wp-content/uploads/2018/07/fav3.png">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+
+</style>
+
+<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FAQ</title>
+
+</head>
+
+<body>
+    <div class="site-identity">
+
+        <a href="index.html" class="site-logo">
+            <img src="./img/logo.png" alt="Site Name" />
+            <h2 class="title">Penguin<span>in</span> Developer</h2>
+        </a>
+    </div>
+
+    <h1 id="faq">FAQ</h1>
+    <p>In this section, FAQ are presented. For some questions, the answer differs for Android solution.
+        <br>
+        <br>
+    </p>
+    <h2 id="faq--technical-features">FAQ – Technical Features</h2>
+    <h3 id="what-does-the-penguinins-sdk-include">What does the PenguinIN’s SDK include?</h3>
+    <p>PenguinIN shares</p>
+    <ul>
+        <li><strong>Native library file (.aar for Android or .framework for iOS)</strong></li>
+        <li><strong>Sample project</strong></li>
+        <li><strong>SDK documentation</strong></li>
+    </ul>
+    <h3 id="which-platformsmobile-phones-are-supported">Which platforms/mobile phones are supported?</h3>
+    <p>Penguin’s Mobile SDK supports any mobile phones that run</p>
+    <ul>
+        <li><strong><a style="display: inherit;"
+                    href="https://en.wikipedia.org/wiki/Android_version_history#Android_6.0_Marshmallow_(API_23)">Android
+                    v6.0 Marshmallow (API 23)</a> and later</strong></li>
+        <li><strong>iOS 9.0 and later</strong></li>
+    </ul>
+    <h3 id="what-happens-if-a-mobile-phone-does-not-support-ble">What happens if a mobile phone does not support BLE?
+    </h3>
+    <p>We need Bluetooth for indoor positioning. Without Bluetooth, <strong>positioning stops and returns a failure
+            initialization status with a related Error Code.</strong></p>
+    <h3 id="what-happens-if-a-user-does-not-allow-location-permission">What happens if a user does not allow location
+        permission?</h3>
+    <p>We need a location permission for the SDK to calculate the position of the device. Without location permission,
+        <strong>positioning stops and returns a failure initialization status with related Error Code.</strong>
+    </p>
+    <h3 id="does-sdk-work-in-the-background">Does SDK work in the background?</h3>
+    <p>Yes. Penguin’s Mobile SDK works in the background. This useful feature can be configured. Android and iOS show
+        different behavior when running in background. They may also show various OS limitations. For your specific use
+        case, please discuss with PenguinIN support.
+        <br>
+        <br>
+    </p>
+    <h2 id="faq--data-internet-usage">FAQ – Data/ Internet Usage</h2>
+    <h3 id="what-happens-when-a-user-loses-internet-connection">What happens when a user loses internet connection?</h3>
+    <p>All main components of PenguinIN’s Mobile SDK, such as loading data or positioning, need a connection to the
+        hosting server.</p>
+    <p>If the server is located on a local domain, the user must be connected to this local network and there is no need
+        for internet connection of their device.</p>
+    <p>If the server hosts on an online domain, the SDK stops calculating the position and returns a connectivity
+        disconnection status when the user loses internet connectivity.</p>
+    <h3 id="which-data-is-collected">Which data is collected?</h3>
+    <p>SDK uploads several types of data to the PenguinIN Cloud. This data includes:</p>
+    <ul>
+        <li><strong>Device position (coordinates and timestamp)</strong></li>
+        <li><strong>SDK Analytics information</strong></li>
+        <li><strong>Crash logging (Advance Crash analytics feature)</strong></li>
+    </ul>
+    <h3 id="which-data-does-the-sdk-store-on-the-device">Which data does the SDK store on the device?</h3>
+    <p>The Mobile SDK uses device storage to improve performance and keep the communication over the network interface
+        to a minimum. The stored data</p>
+    <p>includes:</p>
+    <ul>
+        <li><strong>Venues main data</strong></li>
+        <li><strong>Floors main data and settings</strong></li>
+        <li><strong>Routes (Edges) data</strong>
+            <br>
+            <br>
+        </li>
+    </ul>
+    <h2 id="faq--permissions">FAQ – Permissions</h2>
+    <h3 id="do-users-need-to-allow-permissions">Do users need to allow permissions?</h3>
+    <p>Various functionalities like BLE, sensor, and background location only work when the user allows the needed
+        permissions.</p>
+    <h3 id="which-permissions-are-required">Which permissions are required?</h3>
+    <p><strong>Android</strong></p>
+    <ul>
+        <li><strong>Location permissions.</strong></li>
+        <li><strong>Bluetooth permissions.</strong></li>
+        <li><strong>Internet &amp; Network permissions.</strong></li>
+        <li><strong>Storage Permissions.</strong></li>
+    </ul>
+    <p><strong>iOS</strong></p>
+    <ul>
+        <li><strong>Location permissions.</strong></li>
+        <li><strong>Bluetooth permissions.</strong>
+            <br>
+            <br>
+        </li>
+    </ul>
+    <h2 id="faq--dependencies">FAQ – Dependencies</h2>
+    <h3 id="what-are-the-framework-dependencies-of-the-sdk">What are the framework dependencies of the SDK?</h3>
+    <p>Penguin’s Mobile SDK needs the following dependencies:</p>
+    <p><strong>Android</strong></p>
+    <ul>
+        <li><strong>(service) com.google.android.gms:play-services-gcm</strong></li>
+        <li><strong>(service) com.google.code.gson:gson</strong></li>
+        <li><strong>(service) com.android.volley:volley</strong></li>
+    </ul>
+    <p><strong>iOS</strong></p>
+    <ul>
+        <li><strong>CoreLocation.framework</strong></li>
+        <li><strong>CoreBluetooth.framework</strong></li>
+        <li><strong>CoreMotion.framework</strong></li>
+        <li><strong>Foundation.framework</strong></li>
+        <li><strong>SystemConfiguration.framework</strong></li>
+        <li><strong>UIKit.framework</strong>
+            <br>
+            <br>
+        </li>
+    </ul>
+    <h2 id="for-any-questions-and-comments-please-send-us-a-message-to-infopenguinincom">For any questions and comments,
+        please send us a message to <strong><a href="mailto:support@penguinin.com"
+                style="display:inherit">support@penguinin.com</a></strong></h2>
+
+
+</body>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.15.2/js/all.js"></script>
+<header class="site-header">
+
+</html>

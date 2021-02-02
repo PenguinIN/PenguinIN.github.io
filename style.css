@@ -1,0 +1,167 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI',
+    system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.task-list-item {
+  list-style-type: none;
+}
+
+.task-list-item-checkbox {
+  margin-left: -20px;
+  vertical-align: middle;
+}
+
+.title span {
+  color: #fdaa27;
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: 900;
+  margin-bottom: 0;
+  color: black;
+  font-family: 'Poppins', Arial, Tahoma, sans-serif;
+}
+
+.buttonlink {
+  width: 9em;
+  border: 2px solid #fdaa27;
+  background: #ffe;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.sdkbtn {
+  width: 6em;
+  border: 2px solid #fdaa27;
+  background-image: url('SDKN.jpg');
+  border-radius: 5px;
+}
+
+:not(p) a {
+  display: block;
+  width: 100%;
+  line-height: 2em;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+a:hover {
+  color: #fdaa27;
+  /* background: #eff; */
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.site-header {
+  padding-bottom: 20px;
+}
+
+.site-header::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.site-identity h1,
+.site-identity2 h1 {
+  font-size: 1.5em;
+  margin: 0.7em 0 0.3em 0;
+  display: inline-block;
+}
+
+.site-identity img,
+.site-identity2 img {
+  max-width: 30%;
+  float: left;
+  margin: 0 30px 0 0;
+}
+
+.site-navigation {
+  float: right;
+}
+
+.site-navigation ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+.site-navigation li {
+  display: inline-block;
+  margin: 1.4em 1em 1em 1em;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+}
+#faq--dependencies,
+#faq--permissions,
+#faq--data-internet-usage,
+#faq--technical-features,
+.custom-header {
+  border: 2px solid orange !important;
+  padding-left: 10px !important;
+  padding-top: 5px !important;
+}
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 0px solid -webkit-focus-ring-color !important;
+}
+
+.homeimg {
+  padding: 20px;
+  max-width: 70%;
+  max-height: 50%;
+}
+
+
+.samefloorimg{
+    padding: 20px;
+    max-width: 40%;
+    max-height: 50%;
+}
+.imgsdk2 {
+  max-width: 30%;
+  max-height: 50%;
+  margin-top: 5px;
+}
+
+.imgsdk2-container {
+  text-align: center;
+  display: block;
+}
+
+.imghome-container {
+  text-align: center;
+  display: block;
+}
+
+.containersdk {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.containersdk span {
+  width: 30%;
+  margin: 0 1%;
+}
+
+.fqalink {
+  text-align: left;
+  font-weight: bold;
+}
+
+.custom-subheading {
+  border-bottom: 2px solid #ffb649;
+}
