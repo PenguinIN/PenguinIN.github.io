@@ -27,7 +27,7 @@ body {
 }
 
 .buttonlink {
-  width: 9em;
+  width: 7em;
   border: 2px solid #fdaa27;
   background: #ffe;
   border-radius: 5px;
@@ -69,6 +69,10 @@ a {
   display: table;
   clear: both;
 }
+.site-identity{
+  
+  margin-bottom: 20px !important;
+}
 
 .site-identity h1,
 .site-identity2 h1 {
@@ -79,9 +83,9 @@ a {
 
 .site-identity img,
 .site-identity2 img {
-  max-width: 30%;
+  max-width: 20%;
   float: left;
-  margin: 0 30px 0 0;
+  margin: 0 50px 0 0;
 }
 
 .site-navigation {
@@ -121,7 +125,7 @@ textarea:focus {
 
 .homeimg {
   padding: 20px;
-  max-width: 70%;
+  max-width: 45%;
   max-height: 50%;
 }
 
@@ -148,9 +152,10 @@ textarea:focus {
 }
 
 .containersdk {
-  width: 100%;
+  width: 80%;
   margin: 0 auto;
   text-align: center;
+  margin-top:15px;
 }
 .containersdk span {
   width: 30%;
@@ -158,10 +163,108 @@ textarea:focus {
 }
 
 .fqalink {
-  text-align: left;
   font-weight: bold;
+  display: inline;
 }
 
 .custom-subheading {
   border-bottom: 2px solid #ffb649;
 }
+
+
+
+.childiv2{
+  display: block !important;
+}
+.childiv{
+  display: none;
+}
+
+.closep{
+  display: none !important;
+}
+
+
+
+DIV.ctn {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+
+.intilazediv{
+  display: block !important;
+}
+.intilazebluttothdiiv{
+  display: block !important;
+}
+
+/* table, td, th, tr {
+  border: 1px solid #ffb649!important; 
+}
+th {
+  border-bottom: 2px solid #ffb649 !important;
+} */
+
+ table {
+  width: 100%;
+}
+
+table thead tr {
+  border: 1px solid #ffb6496c;
+  border-bottom-width: 3px;
+  border-bottom-color: #ffb649;
+}
+
+table thead tr th {
+  font-weight: bold;
+  font-size: 16px;
+  border-right: 1px solid  #ffb6496c !important;
+}
+
+table tr th, table tr td {
+  padding: 13px;
+}
+
+table tbody tr td {
+  border-right: 1px solid  #ffb6496c !important;
+  border-left: 1px solid  #ffb6496c !important;
+  border-bottom: 1px solid  #ffb6496c !important;
+} 
+
+
+/* table td{
+  text-align: center !important;
+  font-family: "Poppins" !important;
+  font-weight: 500 !important;
+
+} */
+
+.site-identityheader{
+  border-color: black !important;
+}
+
+
+.opensub {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.initialize-number {
+  font-size: 16px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.opensub i {
+  font-size: 15px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.opensub i.fa-sort-up {
+  margin-top: 10px;
+}
+

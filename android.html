@@ -6,7 +6,8 @@
   <title>Android SDK</title>
   <link rel="shortcut icon" href="https://penguinin.com/wp-content/uploads/2018/07/fav3.png">
   <style>
-    img {
+    
+    .androidcontant-img {
       /* transform: scale(0.7); */
       /* transform-origin: bottom left; */
       max-width: 700px !important;
@@ -17,6 +18,10 @@
       text-align: left !important;
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+  integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+  crossorigin="anonymous" />
+
   <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
   <link rel="stylesheet"
@@ -44,12 +49,18 @@
 </head>
 
 <body class="vscode-body vscode-light">
-  <div class="site-identity2" style="margin-bottom: 15px">
+
+
+  <div class="site-identity">
+
     <a href="index.html" class="site-logo">
-      <img src="./img/logo.png" alt="Site Name" />
+      <img src="./img/logo.png" alt="Site Name">
       <h2 class="title">Penguin<span>in</span> Developer</h2>
     </a>
   </div>
+
+
+
 
   <h1 id="android-documentation---v400">Android Documentation - v4.0.0</h1>
   <h2 id="table-of-contents">Table of Contents</h2>
@@ -63,49 +74,51 @@
     <p>
       <a href="#sdk-and-sample-app-configuration">3 SDK and Sample App Configuration</a>
     </p>
-    <p>
+    <p id="parentAndroid">
       <a href="#sdk:-methods-and-integration">4 SDK: Methods and Integration
       </a>
 
-    <div style="margin-left: 10px;">
-      <p><a href="#isready">4.1 isReady</a></p>
-      <p><a href="#checkerror">4.2 CheckError</a></p>
-      <p><a href="#checkwarning">4.4 CheckWarning</a></p>
-      <p><a href="#geterrormessage">4.5 GetErrorMessage</a></p>
-      <p><a href="#getwarningmessage">4.6 GetWarningMessage</a></p>
-      <p><a href="#setmode">4.7 SetMode</a></p>
-      <p><a href="#getmyposition">4.8 GetMyPosition</a></p>
-      <p><a href="#projectedpoint">4.9 ProjectedPoint</a></p>
-      <p><a href="#setfloor">4.10 SetFloor</a></p>
-      <p><a href="#startnavigation">4.11 StartNavigation</a></p>
-      <p><a href="#stopnavigation">4.12 StopNavigation</a></p>
-      <p><a href="#settestmode">4.13 SetTestMode</a></p>
-      <p><a href="#settestnavpath">4.14 SetTestNavPath</a></p>
-      <p><a href="#getversion">4.15 GetVersion</a></p>
-      <p><a href="#setdataservice">4.16 SetDataService</a></p>
-      <p><a href="#setpositionservice">4.17 SetPositionService</a></p>
-      <p><a href="#setstepdetectionenabled">4.18 SetStepDetectionEnabled</a></p>
-      <p><a href="#setsimulationmodeenabled">4.19 SetSimulationModeEnabled</a></p>
-      <p><a href="#setvenueid">4.20 SetVenueID</a></p>
-      <p>
+    <div style="margin-left: 10px;" class="childiv">
+      <p class="closelist"><a href="#initialize">4.1 Initialize</a></p>
+
+      <p class="closelist"><a href="#isready">4.2 isReady</a></p>
+      <p class="closelist"><a href="#checkerror">4.3 CheckError</a></p>
+      <p class="closelist"><a href="#checkwarning">4.4 CheckWarning</a></p>
+      <p class="closelist"><a href="#geterrormessage">4.5 GetErrorMessage</a></p>
+      <p class="closelist"><a href="#getwarningmessage">4.6 GetWarningMessage</a></p>
+      <p class="closelist"><a href="#setmode">4.7 SetMode</a></p>
+      <p class="closelist"><a href="#getmyposition">4.8 GetMyPosition</a></p>
+      <p class="closelist"><a href="#projectedpoint">4.9 ProjectedPoint</a></p>
+      <p class="closelist"><a href="#setfloor">4.10 SetFloor</a></p>
+      <p class="closelist"><a href="#startnavigation">4.11 StartNavigation</a></p>
+      <p class="closelist"><a href="#stopnavigation">4.12 StopNavigation</a></p>
+      <p class="closelist"><a href="#settestmode">4.13 SetTestMode</a></p>
+      <p class="closelist"><a href="#settestnavpath">4.14 SetTestNavPath</a></p>
+      <p class="closelist"><a href="#getversion">4.15 GetVersion</a></p>
+      <p class="closelist"><a href="#setdataservice">4.16 SetDataService</a></p>
+      <p class="closelist"><a href="#setpositionservice">4.17 SetPositionService</a></p>
+      <p class="closelist"><a href="#setstepdetectionenabled">4.18 SetStepDetectionEnabled</a></p>
+      <p class="closelist"><a href="#setsimulationmodeenabled">4.19 SetSimulationModeEnabled</a></p>
+      <p class="closelist"><a href="#setvenueid">4.20 SetVenueID</a></p>
+      <p class="closelist">
         <a href="#getinitializationprogress">4.21 GetInitializationProgress</a>
       </p>
-      <p><a href="#getcurrentnavigationpath">4.22 GetCurrentNavigationPath</a></p>
-      <p><a href="#isnavigationerrorpath">4.23 isNavigationErrorPath</a></p>
-      <p><a href="#isnavigationfloorerror">4.24 isNavigationFloorError</a></p>
-      <p><a href="#setwifipositioningenable">4.25 SetWiFiPositioningEnable</a></p>
-      <p><a href="#setblepositioningenable">4.26 SetBLEPositioningEnable</a></p>
-      <p><a href="#getconnectivitystatus">4.27 GetConnectivityStatus</a></p>
-      <p><a href="#getfloortransitionstatus">4.28 GetFloorTransitionStatus</a></p>
-      <p><a href="#checktrustedfloor">4.29 CheckTrustedFloor</a></p>
-      <p>
+      <p class="closelist"><a href="#getcurrentnavigationpath">4.22 GetCurrentNavigationPath</a></p>
+      <p class="closelist"><a href="#isnavigationerrorpath">4.23 isNavigationErrorPath</a></p>
+      <p class="closelist"><a href="#isnavigationfloorerror">4.24 isNavigationFloorError</a></p>
+      <p class="closelist"><a href="#setwifipositioningenable">4.25 SetWiFiPositioningEnable</a></p>
+      <p class="closelist"><a href="#setblepositioningenable">4.26 SetBLEPositioningEnable</a></p>
+      <p class="closelist"><a href="#getconnectivitystatus">4.27 GetConnectivityStatus</a></p>
+      <p class="closelist"><a href="#getfloortransitionstatus">4.28 GetFloorTransitionStatus</a></p>
+      <p class="closelist"><a href="#checktrustedfloor">4.29 CheckTrustedFloor</a></p>
+      <p class="closelist">
         <a href="#getpositionrequesterrormessage">4.30 GetPositionRequestErrorMessage</a>
       </p>
-      <p><a href="#checkresetsdkrequest">4.31 CheckResetSDKRequest</a></p>
+      <p class="closelist"><a href="#checkresetsdkrequest">4.31 CheckResetSDKRequest</a></p>
     </div>
     </p>
 
-    <p>
+    <p class="closelist" >
       <a href="#sdk-integration-flow-chart">5 SDK Integration Flow Chart</a>
     </p>
   </div>
@@ -113,26 +126,30 @@
     SDK and Sample Application Delivery
   </h1>
   <p>
-    At the bottom of this page, you will find a link to download the SDK as a
-    <strong>.aar</strong> file and the sample application as a build-able
+   The SDK is shared as an <strong>.aar</strong> file and the sample application as a build-able
     source code to generate the required <strong>.apk</strong> file. This file
     can be integrated in Android Studio via Gradle file. Please note that the
     .aar file needs to be integrated into Lib (Library) folder, then in the
     project Build.gradle file.
-
-    To Download the SDK and Sample app <a
+</p>
+  <p>
+    To Download the Android SDK and Sample app <a
       href="https://penguinin-my.sharepoint.com/:f:/p/devsupport/Euj7LNk2fkBDrTWIULPYhYYBRkE1l14k5g-A0l_PtEH07Q?e=5Kf9YL"
       style="display: inline;" class="fqalink">click here.</a>
 
   </p>
   <h1 id="sample-application" class="custom-header">Sample Application</h1>
   <p>
-    The sample application has two modes of operation: (1) <a style="display: inline;" href="simulation.html">simulation
-      mode</a> and
-    (2) live mode. In <a style="display: inline;" href="simulation.html">simulation mode</a> , the application runs a
+
+    The sample application has two modes of operation:
+      <ul>
+            <li>Simulation mode (for more info about simulation <a style="display: inline; text-decoration: underline;" href="simulation.html">click here</a> )</li>
+            <li> Live mode</li>
+        </ul>
+    In simulation mode, the application runs a
     pre-configured
-    scenario with predetermined list of positions. In live mode, the position
-    is fetched from the position engine services and of course requires
+    scenario with pre-determined list of positions. This position is intended for development phase. In live mode, the position
+    is fetched from the position engine service and of course requires
     complete BLE beacon roll-out and site calibration data to have been
     completed. In both modes, connectivity to the position engine service and
     the presence of at least one BLE beacon is required.
@@ -140,36 +157,63 @@
   <p>The steps below explain how to run the sample application.</p>
   <ul>
     <li>
-      <p>Install Sample App and Grant all permissions Manually:</p>
-      <img src="img/Permission.jpeg" style="zoom: 30%" />
+      <p>Install Sample App. You may need to build the sample app code to generate the needed <strong>.apk </strong> file. Grant all permissions manually as shown in the screen capture below:</p>
+      <div class="ctn">
+
+        <img src="img/Permission.jpeg" alt="iOSLocationPermission" class="left" style="width: 30%;" />
+    </div>
+      
       <br />
     </li>
     <li>
       <p>
-        Run the sample app, and then click on Load Data:
+        Run the sample app. Click on Load Data button. This fetches all required data from the service over APIs:
         <br />
-        <img src="img/Login.jpeg" style="zoom: 33%; margin-top: 25px" />
-        <img src="img/DataLoaded.jpeg" style="zoom: 33%" />
+        <!-- <img src="img/Login.jpeg" class="androidcontant-img" style="zoom: 33%; margin-top: 25px" /> -->
+        <!-- <img src="img/DataLoaded.jpeg" class="androidcontant-img" style="zoom: 33%" /> -->
+      
+      
+
+      <div style="display:flex; justify-content: left;" >
+        <div style="height:auto" >
+            <img src="img/Login.jpeg" style="max-width: 40%;height: auto;width: auto\9;"/>
+        
+           
+        </div>
+        <div style="height: auto;">
+            <img src="img/DataLoaded.jpeg" style="max-width: 40%;height: auto;width: auto\9;"/>
+        </div>
+    </div>
         <br />
       </p>
     </li>
     <li>
       <p>
-        Make sure that the data is loaded to the SQLite tables.
+        To further ensure that the data has indeed been loaded successfully, click on the DB button and review that data which has been loaded to the SQLite tables.
         <br />
-        <img src="img/DB.jpeg" style="zoom: 50%" />
+
+         <div class="ctn">
+
+          <img src="img/DB.jpeg" alt="iOSLocationPermission"  style="width: 20%;" />
+
+      </div>
         <br />
       </p>
     </li>
     <li>
-      <p>After Loading data successfully, click on Login button.</p>
+      <p>After Loading data successfully, click on Login button. No username or password are required at this stage</p>
     </li>
     <li>
       <p>
-        After login, the map appears with the blue dot that shows the current
+        After logging in, the map appears with the blue dot that shows the current
         user location. This is blue dot is based on a simulated position.
         <br />
-        <img src="img/Main.jpeg" style="zoom: 67%; width: 400px;" />
+
+        <div class="ctn">
+
+          <img src="img/Main.jpeg" alt="androidcontant-img"  style="width: 20%;" />
+
+      </div>
         <br />
       </p>
       <p>
@@ -178,14 +222,140 @@
         map and click on start navigation.
         <br />
       </p>
+
+
+
+      <p class=MsoNormal style='text-align:justify;line-height:normal'><span
+        >Now that we have
+        experienced the features of the sample app, we will now explain its inner
+        workings.</span></p>
+        
+        <p class=MsoNormal style='text-align:justify;line-height:normal'><span
+       >The sample app is
+        intended to show a full wayfinding journey, present the two wayfinding modes
+        available and showcase common API usage.</span></p>
+        
+        <p class=MsoNormal style='text-align:justify;line-height:normal'><span
+       >PenNav has two
+        wayfinding modes, namely: free-style and navigation. In free-style the user
+        does not specify a specific destination and the position returned from the SDK
+        reflects the current position of the user. In navigation mode, the user
+        specifies a destination POI. The API offers a shortest path route from the
+        current position to the POI entrance location. The route is returned as a list
+        of edges. In this mode, an up-to-date position along this path is returned by
+        the SDK. The map image, the route and the location along the route must be
+        drawn by the app developer according to the intended UI rendering guidelines. If
+        the user deviates from the pre-calculated route, the SDK returns a wrong-path
+        error. The app developer may elect to reflect that  in the app space for better
+        navigation experience. </span></p>
+        
+        <p class=MsoNormal style='text-align:justify;line-height:normal'><span
+        >In a multi-floor
+        and/or multi-venue navigation scenario, the SDK returns the venue (i.e.
+        building) and the floor which shall be used by the app developer to update the
+        currently displayed map image. </span></p>
+        
+        <p class=MsoNormal style='text-align:justify;line-height:normal'><span
+      >The app developer
+        may also call the API to list all available PoIs to build – for example – a
+        directory listing inside the app. Furthermore, the app developer shall use the
+        API to retrieve the map image for a particular floor. They can also use the API
+        to return the zone (defined as a polygon) which defines the boundaries of a
+        particular PoI on the map image. This zone definition can be leveraged in
+        creating interactive zones using gesture interactions with the map image. This
+        feature is implementation specific. </span></p>
+        
+        <p class=MsoNormal style='text-align:justify;line-height:normal'><span
+      >The above is only a
+        brief listing of the capabilities of the API. For a comprehensive list, the
+        app-developer is referred to API documentation.</span></p>
+        
+        <p class=MsoNormal style='line-height:normal'><span >We offer a hardcoded sample PoI within the
+        sample app. It can be changed in the sample app code, by opening the
+        com.penguinin_sampleData.Model.PoI\POI \Constructor, and modifying the
+        following parameters: </span></p>
+        
+        <ul type=disc>
+         <li class=MsoNormal style='line-height:normal'><span
+            >ID.</span></li>
+         <li class=MsoNormal style='line-height:normal'><span 
+            >Floor ID.</span></li>
+         <li class=MsoNormal style='line-height:normal'><span>Name.</span></li>
+         <li class=MsoNormal style='line-height:normal'><span 
+            >Description</span></li>
+         <li class=MsoNormal style='line-height:normal'><span
+           >Zone Points.</span></li>
+        </ul>
+        
+        <p class=MsoNormal style='line-height:normal'><span >The PoI must exist in the list of
+        available PoIs for it to be reflect correctly in the sample app. The snippet
+        below shows the PoI description:</span></p>
+        
+        <!-- <p class=MsoNormal style='line-height:normal'><img width=624 height=225
+        id="Picture 3" src="UpdatedSampleConfig777_files/image001.png"></p> -->
+        <div class="ctn">
+
+          <img src="img/androidupdate.png" alt="androidcontant-img"  style="width: 40%;" />
+
+      </div>
+        <p class=MsoNormal style='line-height:normal'><span >For speed of development, the simulator
+        mode offers scenarios for free-style and navigation modes. To access these scenarios,
+        change the <b>Username</b> from Sample code in
+        com.penguinin_sample\MainActivity\onCreate. List of available usernames (i.e.
+        scenarios) are  available here. For live mode should be a unique ID for every
+        user device. For example, device ID can be used as this unique ID. </span></p>
+        
+        <div class="ctn">
+
+          <img src="img/androidupdate2.png" alt="androidcontant-img"  style="width: 50%;" />
+
+      </div>
+        <!-- <p class=MsoNormal style='line-height:normal'><img width=624 height=143
+        id="Picture 4" src="UpdatedSampleConfig777_files/image002.png"></p> -->
+        
+        <p class=MsoNormal style='line-height:normal'>To switch between live and simulation
+        mode, you can enable/disable the SDK parameter </span>Simulation Mode flag.</p>
+        
+        <p class=MsoNormal style='margin-left:.5in;line-height:normal'><span
+        >&nbsp;</span></p>
+        
+        <p class=MsoNormal></p>
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </li>
   </ul>
+
+
+
+
+
+
+
+
+
   <h1 id="sdk-and-sample-app-configuration" class="custom-header">
-    SDK and Sample App Configuration
+    SDK  Configuration
   </h1>
   <p>
     It is likely that during the development cycle, parameters for the SDK and
-    the sample application will change. To change the
+    the sample app will change. To change the
     <strong>SDK configuration</strong> from SDK folder open the
     com.penguinin_sampleUtil/SDKParameters, and you can start modifying the
     following parameters:
@@ -210,62 +380,10 @@
         <li>False: Live BLE scan run.</li>
       </ul>
     </li>
-    <li>
-      Support Multi Floor Flag:
-      <ul>
-        <li>True: Use Multi Floor configurations.</li>
-        <li>False: Use Single Floor configurations.</li>
-      </ul>
-    </li>
+ 
   </ul>
-  <p>
-    To change the <strong>PoI Data</strong> from Sample app folder open the
-    com.penguinin_sampleData.Model.PoI\POI \Contructor, and you can start
-    modifying the following paramters:
-  </p>
-  <ul>
-    <li>
-      <p>ID.</p>
-    </li>
-    <li>
-      <p>Floor ID.</p>
-    </li>
-    <li>
-      <p>Name.</p>
-    </li>
-    <li>
-      <p>Description</p>
-    </li>
-    <li>
-      <p>Zone Points.</p>
-      <p>
-        <strong>Two different definitions for multi and single floor</strong>
-        <br />
-        <img src="img/POIs.png" alt="" />
-        <br />
-      </p>
-    </li>
-  </ul>
-  <p>
-    To change the <strong>Username</strong> from Sample app folder open the o
-    com.penguinin_sample\MainActivity\onCreate, and you can start modifying
-    the following:
-  </p>
-  <ul>
-    <li>
-      <p>Username for live mode.</p>
-    </li>
-    <li>
-      <p>Username for simulation multi floor mode.</p>
-    </li>
-    <li>
-      <p>Username for simulation single floor mode.</p>
-      <p>
-        <img src="img/Username.png" alt="" />
-        <br />
-      </p>
-    </li>
-  </ul>
+
+
   <h1 id="sdk-methods-and-integration" class="custom-header">
     SDK: Methods and Integration
   </h1>
@@ -275,7 +393,14 @@
     within a mobile application.
   </p>
   <br />
-  <h2 id="initialize">Initialize</h2>
+  <h2 id="initialize" class="opensub">
+      <span class="initialize-number">4.1</span>
+
+    Initialize
+  
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Returns initialization success or failure as Boolean value.
     <br />
@@ -306,14 +431,14 @@
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">UserID</td>
         <td style="text-align: left">Front End UserID</td>
-        <td style="text-align: center">String</td>
+        <td style="text-align: left">String</td>
       </tr>
       <tr>
         <td style="text-align: left">IPList</td>
@@ -321,22 +446,22 @@
           Penguin Data API IP address (mandatory)<br />Penguin Position API IP
           address (mandatory)<br />Third party API IP address (optional)
         </td>
-        <td style="text-align: center">List(String)</td>
+        <td style="text-align: left">List(String)</td>
       </tr>
       <tr>
         <td style="text-align: left">context</td>
         <td style="text-align: left">App main context</td>
-        <td style="text-align: center">Context</td>
+        <td style="text-align: left">Context</td>
       </tr>
       <tr>
         <td style="text-align: left">activity</td>
         <td style="text-align: left">App main activity</td>
-        <td style="text-align: center">Activity</td>
+        <td style="text-align: left">Activity</td>
       </tr>
       <tr>
         <td style="text-align: left">UseNoneIMU</td>
         <td style="text-align: left">Enable Just JAR None IMU calculation</td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
@@ -347,7 +472,7 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
@@ -357,13 +482,18 @@
           Success: 1 or Fail: 0<br />Error Code.<br />Warning Code.<br />separated
           by “_”<br />ex: “1_0_0” or “0_1_2”
         </td>
-        <td style="text-align: center">String</td>
+        <td style="text-align: left">String</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="isready">isReady</h2>
+  </div>
+  <h2 class="opensub" id="isready">
+    <span class="initialize-number">4.2</span>
+    isReady  <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Returns a Boolean value indication, that all needed requirements are ready
     and you can start calling other methods.
@@ -380,20 +510,27 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">Ready</td>
         <td style="text-align: left">Ready for calling other methods</td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 id="checkerror" class="custom-subheading">CheckError</h2>
+  </div>
+  <h2 id="checkerror" class="opensub">
+    <span class="initialize-number">4.3</span>
+    CheckError
+  
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Returns current error code if it exists.
     <br />
@@ -409,21 +546,27 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">ErrorCode</td>
         <td style="text-align: left">Current Error Code (0: No Errors)</td>
-        <td style="text-align: center">Int</td>
+        <td style="text-align: left">Int</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
+</div>
 
-  <h2 id="checkwarning" class="custom-subheading">CheckWarning</h2>
+  <h2 id="checkwarning" class="opensub">
+    <span class="initialize-number">4.4</span>
+    CheckWarning
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Returns current warning code if it exists.
     <br />
@@ -439,7 +582,7 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
@@ -448,31 +591,38 @@
         <td style="text-align: left">
           Current Warning Code (0: No Warnings)
         </td>
-        <td style="text-align: center">Int</td>
+        <td style="text-align: left">Int</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 id="geterrormessage" class="custom-subheading">GetErrorMessage</h2>
+  </div>
+  <h2 id="geterrormessage" class="opensub">
+    <span class="initialize-number">4.5</span>
+    GetErrorMessage
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Returns error message from Error Code Look Up table.
     <br />
   </p>
+
   <h3 id="parameters-4">Parameters</h3>
   <table>
     <thead>
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">ID</td>
         <td style="text-align: left">Error Code</td>
-        <td style="text-align: center">Int</td>
+        <td style="text-align: left">Int</td>
       </tr>
     </tbody>
   </table>
@@ -483,14 +633,14 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">ErrorMessage</td>
         <td style="text-align: left">Error Message</td>
-        <td style="text-align: center">String</td>
+        <td style="text-align: left">String</td>
       </tr>
     </tbody>
   </table>
@@ -564,7 +714,13 @@
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="getwarningmessage">GetWarningMessage</h2>
+  </div>
+  <h2 class="opensub" id="getwarningmessage">
+    <span class="initialize-number">4.6</span>
+    GetWarningMessage
+  <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Returns warning message from Warning Code Look Up table.
     <br />
@@ -575,14 +731,14 @@
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">ID</td>
         <td style="text-align: left">Warning Code</td>
-        <td style="text-align: center">Int</td>
+        <td style="text-align: left">Int</td>
       </tr>
     </tbody>
   </table>
@@ -593,14 +749,14 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">WarningMessage</td>
         <td style="text-align: left">Warning Message</td>
-        <td style="text-align: center">String</td>
+        <td style="text-align: left">String</td>
       </tr>
     </tbody>
   </table>
@@ -641,7 +797,14 @@
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="setmode">SetMode</h2>
+  </div>
+  <h2 class="opensub" id="setmode">
+    
+       <span class="initialize-number">4.7</span>  SetMode
+       <i class="fas fa-sort-down"></i>
+  
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>Set the position mode and scanning time frequency:</p>
   <ul>
     <li>
@@ -678,19 +841,19 @@
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">ModeID</td>
         <td style="text-align: left">BackGround, FreeStyle, Navigation</td>
-        <td style="text-align: center">Int</td>
+        <td style="text-align: left">Int</td>
       </tr>
       <tr>
         <td style="text-align: left">TimePeriod</td>
         <td style="text-align: left">Time Period in ms</td>
-        <td style="text-align: center">Int</td>
+        <td style="text-align: left">Int</td>
       </tr>
     </tbody>
   </table>
@@ -701,14 +864,14 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">Success</td>
         <td style="text-align: left">Updated the mode successfully</td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
@@ -719,30 +882,37 @@
       <tr>
         <th style="text-align: left">ID</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Scan Time (milliseconds)</th>
+        <th style="text-align: left">Scan Time (milliseconds)</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">1</td>
         <td style="text-align: left">Background (Default)</td>
-        <td style="text-align: center">10000</td>
+        <td style="text-align: left">10000</td>
       </tr>
       <tr>
         <td style="text-align: left">2</td>
         <td style="text-align: left">Free Style</td>
-        <td style="text-align: center">2000</td>
+        <td style="text-align: left">2000</td>
       </tr>
       <tr>
         <td style="text-align: left">3</td>
         <td style="text-align: left">Navigation</td>
-        <td style="text-align: center">2000</td>
+        <td style="text-align: left">2000</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="getmyposition">GetMyPosition</h2>
+  </div>
+
+  <h2 class="opensub" id="getmyposition">
+    <span class="initialize-number">4.8</span>
+    GetMyPosition
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Returns last detected position concatenated together with &quot;_&quot;
     separator:
@@ -799,7 +969,7 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
@@ -809,13 +979,20 @@
           FloorID, X, Y, Accuracy Circle Radius , Current Edge ID<br />Concatenated
           together with &quot;_&quot; separator
         </td>
-        <td style="text-align: center">String</td>
+        <td style="text-align: left">String</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="projectedpoint">ProjectedPoint</h2>
+  </div>
+  <h2 class="opensub" id="projectedpoint">
+    <span class="initialize-number">4.9</span>
+    ProjectedPoint
+    <i class="fas fa-sort-down"></i>
+  
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Projects any point (X, Y) (i.e. chosen from the map or any other source)
     onto the defined edges. Use of such point depends on the enabled mode:
@@ -838,19 +1015,19 @@
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">MapPoint</td>
         <td style="text-align: left">Requested Point (X,Y)</td>
-        <td style="text-align: center">Point</td>
+        <td style="text-align: left">Point</td>
       </tr>
       <tr>
         <td style="text-align: left">FloorID</td>
         <td style="text-align: left">Requested Floor ID</td>
-        <td style="text-align: center">Int</td>
+        <td style="text-align: left">Int</td>
       </tr>
     </tbody>
   </table>
@@ -861,7 +1038,7 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
@@ -870,13 +1047,20 @@
         <td style="text-align: left">
           The Projected MapPoint on Requested Floor Edges
         </td>
-        <td style="text-align: center">Point</td>
+        <td style="text-align: left">Point</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="setfloor">SetFloor</h2>
+  </div>
+  <h2 class="opensub" id="setfloor">
+    <span class="initialize-number">4.10</span>
+    SetFloor
+  <i class="fas fa-sort-down"></i>
+  
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Set current floor ID.
     <br />
@@ -895,14 +1079,14 @@
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">FloorID</td>
         <td style="text-align: left">Requested Floor ID</td>
-        <td style="text-align: center">Int</td>
+        <td style="text-align: left">Int</td>
       </tr>
     </tbody>
   </table>
@@ -913,20 +1097,27 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">Success</td>
         <td style="text-align: left">New Floor ID saved successfully</td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="startnavigation">StartNavigation</h2>
+  </div>
+
+  <h2 class="opensub" id="startnavigation">
+    <span class="initialize-number">4.11</span>
+    StartNavigation
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Start positioning on the given navigation path.
     <br />
@@ -945,14 +1136,14 @@
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">PathEdges</td>
         <td style="text-align: left">Navigation path edges list</td>
-        <td style="text-align: center">List(Edge)</td>
+        <td style="text-align: left">List(Edge)</td>
       </tr>
     </tbody>
   </table>
@@ -963,14 +1154,14 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">Success</td>
         <td style="text-align: left">Navigation mode enabled successfully</td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
@@ -1028,7 +1219,13 @@
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="stopnavigation">StopNavigation</h2>
+  </div>
+  <h2 class="opensub" id="stopnavigation">
+    <span class="initialize-number">4.12</span>
+    StopNavigation
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Stop navigation positioning and go back to freestyle mode positioning.
     <br />
@@ -1052,7 +1249,7 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
@@ -1061,13 +1258,22 @@
         <td style="text-align: left">
           Navigation mode disabled successfully
         </td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="settestmode">SetTestMode</h2>
+  </div>
+
+
+  <h2 class="opensub" id="settestmode">
+    <span class="initialize-number">4.13</span>
+    SetTestMode
+    <i class="fas fa-sort-down"></i>
+  
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Set the test position mode and scanning time frequency.
     <br />
@@ -1078,7 +1284,7 @@
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
@@ -1087,24 +1293,24 @@
         <td style="text-align: left">
           Point’s Source text file name at Root destination
         </td>
-        <td style="text-align: center">String</td>
+        <td style="text-align: left">String</td>
       </tr>
       <tr>
         <td style="text-align: left">TimePeriod</td>
         <td style="text-align: left">Time Period in ms</td>
-        <td style="text-align: center">Int</td>
+        <td style="text-align: left">Int</td>
       </tr>
       <tr>
         <td style="text-align: left">NoneIMU</td>
         <td style="text-align: left">Enable Just JAR None IMU calculation</td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
       <tr>
         <td style="text-align: left">isFileSimulation</td>
         <td style="text-align: left">
           Use the Files as Simulation Points Source
         </td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
@@ -1115,20 +1321,29 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">Success</td>
         <td style="text-align: left">Updated the mode successfully</td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="settestnavpath">SetTestNavPath</h2>
+  </div>
+  <h2 class="opensub" id="settestnavpath">
+    <span class="initialize-number">4.14</span>
+    SetTestNavPath
+    <i class="fas fa-sort-down"></i>
+  </h2>
+    
+    <div style="display:none;" class="intilazediiv">
+
+
   <p>
     Set the test <strong>navigation</strong> position mode and scanning time
     frequency.
@@ -1140,7 +1355,7 @@
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
@@ -1150,24 +1365,24 @@
           Navigation Path ordered edges Source text file name at Root
           destination
         </td>
-        <td style="text-align: center">String</td>
+        <td style="text-align: left">String</td>
       </tr>
       <tr>
         <td style="text-align: left">PointsFileName</td>
         <td style="text-align: left">
           Point’s Source text file name at Root destination
         </td>
-        <td style="text-align: center">String</td>
+        <td style="text-align: left">String</td>
       </tr>
       <tr>
         <td style="text-align: left">TimePeriod</td>
         <td style="text-align: left">Time Period in ms</td>
-        <td style="text-align: center">Int</td>
+        <td style="text-align: left">Int</td>
       </tr>
       <tr>
         <td style="text-align: left">NoneIMU</td>
         <td style="text-align: left">Enable Just JAR None IMU calculation</td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
@@ -1178,14 +1393,14 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">Navigation Edges List</td>
         <td style="text-align: left">File’s Edges list</td>
-        <td style="text-align: center">List(Edge)</td>
+        <td style="text-align: left">List(Edge)</td>
       </tr>
     </tbody>
   </table>
@@ -1243,7 +1458,15 @@
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="getversion">GetVersion</h2>
+  </div>
+  <h2 class="opensub" id="getversion">
+    <span class="initialize-number">4.15</span>
+    GetVersion
+
+    <i class="fas fa-sort-down"></i>
+
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Returns SDK’s current version number.
     <br />
@@ -1259,20 +1482,28 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">Version</td>
         <td style="text-align: left">Returns version’s number</td>
-        <td style="text-align: center">String</td>
+        <td style="text-align: left">String</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="setdataservice">SetDataService</h2>
+  </div>
+  <h2 class="opensub" id="setdataservice">
+    <span class="initialize-number">4.16</span>
+    
+    SetDataService
+    <i class="fas fa-sort-down"></i>
+  
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Sets data API service name.
     <br />
@@ -1283,14 +1514,14 @@
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">ServiceName</td>
         <td style="text-align: left">-</td>
-        <td style="text-align: center">String</td>
+        <td style="text-align: left">String</td>
       </tr>
     </tbody>
   </table>
@@ -1302,7 +1533,16 @@
     <br />
     <br />
   </p>
-  <h2 class="custom-subheading" id="setpositionservice">SetPositionService</h2>
+  </div>
+
+  <h2 class="opensub" id="setpositionservice">
+    <span class="initialize-number">4.17</span>
+    SetPositionService
+    <i class="fas fa-sort-down"></i>
+  
+  </h2>
+
+  <div style="display:none;" class="intilazediiv">
   <p>
     Sets position service name.
     <br />
@@ -1313,14 +1553,14 @@
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">ServiceName</td>
         <td style="text-align: left">-</td>
-        <td style="text-align: center">String</td>
+        <td style="text-align: left">String</td>
       </tr>
     </tbody>
   </table>
@@ -1332,7 +1572,13 @@
     <br />
     <br />
   </p>
-  <h2 id="setstepdetectionenabled" class="custom-subheading">SetStepDetectionEnabled</h2>
+  </div>
+  <h2 id="setstepdetectionenabled" class="opensub">
+    <span class="initialize-number">4.18</span>
+    SetStepDetectionEnabled
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Enables positioning dependency on steps.
     <br />
@@ -1343,14 +1589,14 @@
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">isEnabled</td>
         <td style="text-align: left">-</td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
@@ -1362,7 +1608,15 @@
     <br />
     <br />
   </p>
-  <h2 id="setsimulationmodeenabled" class="custom-subheading">SetSimulationModeEnabled</h2>
+  </div>
+
+  <h2 id="setsimulationmodeenabled" class="opensub">
+    <span class="initialize-number">4.19</span> 
+    SetSimulationModeEnabled
+    <i class="fas fa-sort-down"></i>
+  </h2>
+
+  <div style="display:none;" class="intilazediiv">
   <p>
     Enables positioning simulation mode.
     <br />
@@ -1373,21 +1627,21 @@
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">isEnabled</td>
         <td style="text-align: left">-</td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
       <tr>
         <td style="text-align: left">isFileSimulation</td>
         <td style="text-align: left">
           Use the Files as Simulation Points Source
         </td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
@@ -1399,7 +1653,14 @@
     <br />
     <br />
   </p>
-  <h2 id="setvenueid" class="custom-subheading">SetVenueID</h2>
+  </div>
+
+  <h2 id="setvenueid" class="opensub">
+    <span class="initialize-number">4.20</span>
+    SetVenueID
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Sets positioning venue ID.
     <br />
@@ -1410,7 +1671,7 @@
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
@@ -1422,7 +1683,7 @@
           Otherwise, if sent specific venue ID, it will get data for the sent
           venue ID.
         </td>
-        <td style="text-align: center">Int</td>
+        <td style="text-align: left">Int</td>
       </tr>
     </tbody>
   </table>
@@ -1434,7 +1695,13 @@
   </p>
   <br />
   <br />
-  <h2 id="getinitializationprogress" class="custom-subheading">GetInitializationProgress</h2>
+  </div>
+  <h2 id="getinitializationprogress" class="opensub">
+    <span class="initialize-number">4.21</span>
+    GetInitializationProgress
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Returns SDK initialization progress status.
     <br />
@@ -1447,14 +1714,14 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">Status</td>
         <td style="text-align: left">-</td>
-        <td style="text-align: center">Int</td>
+        <td style="text-align: left">Int</td>
       </tr>
     </tbody>
   </table>
@@ -1490,7 +1757,13 @@
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="getcurrentnavigationpath">GetCurrentNavigationPath</h2>
+  </div>
+  <h2 class="opensub" id="getcurrentnavigationpath">
+    <span class="initialize-number">4.22</span>
+    GetCurrentNavigationPath
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Returns SDK current navigation path (Venue, Floor, Edges, List, etc.).
     <br />
@@ -1506,14 +1779,14 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">Navigation Sub Path</td>
         <td style="text-align: left">SDK Current navigation Sub Path</td>
-        <td style="text-align: center">NavigationSubPath</td>
+        <td style="text-align: left">NavigationSubPath</td>
       </tr>
     </tbody>
   </table>
@@ -1524,46 +1797,46 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">SubPathsSize</td>
         <td style="text-align: left">Int</td>
-        <td style="text-align: center">all navigation sub paths count</td>
+        <td style="text-align: left">all navigation sub paths count</td>
       </tr>
       <tr>
         <td style="text-align: left">SubPathIndex</td>
         <td style="text-align: left">Int</td>
-        <td style="text-align: center">
+        <td style="text-align: left">
           Current index of all navigation sub paths list
         </td>
       </tr>
       <tr>
         <td style="text-align: left">VenueID</td>
         <td style="text-align: left">Int</td>
-        <td style="text-align: center">Current Path Venue ID</td>
+        <td style="text-align: left">Current Path Venue ID</td>
       </tr>
       <tr>
         <td style="text-align: left">FloorID</td>
         <td style="text-align: left">Int</td>
-        <td style="text-align: center">Current Path Floor ID</td>
+        <td style="text-align: left">Current Path Floor ID</td>
       </tr>
       <tr>
         <td style="text-align: left">FirstEdge</td>
         <td style="text-align: left">Edge</td>
-        <td style="text-align: center">Current Path First Edge</td>
+        <td style="text-align: left">Current Path First Edge</td>
       </tr>
       <tr>
         <td style="text-align: left">NextEdge</td>
         <td style="text-align: left">Edge</td>
-        <td style="text-align: center">Next Path Edge</td>
+        <td style="text-align: left">Next Path Edge</td>
       </tr>
       <tr>
         <td style="text-align: left">NavigationPath</td>
         <td style="text-align: left">List(Edge)</td>
-        <td style="text-align: center">Current Sub path List of Edges</td>
+        <td style="text-align: left">Current Sub path List of Edges</td>
       </tr>
     </tbody>
   </table>
@@ -1621,7 +1894,13 @@
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="isnavigationerrorpath">isNavigationErrorPath</h2>
+  </div>
+  <h2 class="opensub" id="isnavigationerrorpath">
+    <span class="initialize-number">4.23</span>
+    isNavigationErrorPath
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Returns navigation error path flag.
     <br />
@@ -1637,20 +1916,26 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">Error Path</td>
         <td style="text-align: left">-</td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="isnavigationfloorerror">isNavigationFloorError</h2>
+</div>
+  <h2 class="opensub" id="isnavigationfloorerror">
+    <span class="initialize-number">4.24</span>
+    isNavigationFloorError
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Returns flag that your position floor is out of all navigation path.
     <br />
@@ -1666,7 +1951,7 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
@@ -1675,13 +1960,19 @@
         <td style="text-align: left">
           Current Floor is out of all navigation path
         </td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="setwifipositioningenable">SetWiFiPositioningEnable</h2>
+  </div>
+  <h2 class="opensub" id="setwifipositioningenable">
+    <span class="initialize-number">4.25</span>
+    SetWiFiPositioningEnable
+     <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Enables or disables <strong>Wi-Fi</strong> positioning.
     <br />
@@ -1692,14 +1983,14 @@
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">Enable</td>
         <td style="text-align: left">-</td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
@@ -1710,20 +2001,28 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">Success</td>
         <td style="text-align: left">-</td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="setblepositioningenable">SetBLEPositioningEnable</h2>
+  </div>
+  <h2 class="opensub" id="setblepositioningenable">
+    
+    <span class="initialize-number">4.26</span>
+    SetBLEPositioningEnable
+     <i class="fas fa-sort-down"></i>
+  
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Enables or disables <strong>BLE</strong> positioning.
     <br />
@@ -1734,14 +2033,14 @@
       <tr>
         <th style="text-align: left">Parameters</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">Enable</td>
         <td style="text-align: left">-</td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
@@ -1752,20 +2051,27 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">Success</td>
         <td style="text-align: left">-</td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="getconnectivitystatus">GetConnectivityStatus</h2>
+  </div>
+  <h2 class="opensub" id="getconnectivitystatus">
+    <span class="initialize-number">4.27</span>
+    GetConnectivityStatus
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  
+  <div style="display:none;" class="intilazediiv">
   <p>
     Returns Position Server Connectivity Status.
     <br />
@@ -1781,14 +2087,14 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">StatusCode</td>
         <td style="text-align: left">-</td>
-        <td style="text-align: center">Int</td>
+        <td style="text-align: left">Int</td>
       </tr>
     </tbody>
   </table>
@@ -1826,7 +2132,14 @@
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="getfloortransitionstatus">GetFloorTransitionStatus</h2>
+  </div>
+  <h2 class="opensub" id="getfloortransitionstatus">
+    <span class="initialize-number">4.28</span>
+    GetFloorTransitionStatus
+
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Returns Floor Transition Status.
     <br />
@@ -1842,14 +2155,14 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <td style="text-align: left">StatusCode</td>
         <td style="text-align: left">-</td>
-        <td style="text-align: center">Int</td>
+        <td style="text-align: left">Int</td>
       </tr>
     </tbody>
   </table>
@@ -1887,7 +2200,13 @@
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="checktrustedfloor">CheckTrustedFloor</h2>
+  </div>
+  <h2 class="opensub" id="checktrustedfloor">
+    <span class="initialize-number">4.29</span>
+    CheckTrustedFloor
+    <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
   <p>
     Returns Position engine’s Floor Trusted Flag.
     <br />
@@ -1903,7 +2222,7 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
@@ -1912,13 +2231,20 @@
         <td style="text-align: left">
           Ask User to select his current floor if not trusted
         </td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 class="custom-subheading" id="getpositionrequesterrormessage">GetPositionRequestErrorMessage</h2>
+  </div>
+  <h2 class="opensub" id="getpositionrequesterrormessage">
+    <span class="initialize-number">4.30</span>
+    GetPositionRequestErrorMessage
+   <i class="fas fa-sort-down"></i>
+  </h2>
+  <div style="display:none;" class="intilazediiv">
+  
   <p>
     Returns error message that received from position engine.
     <br />
@@ -1934,7 +2260,7 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
@@ -1943,13 +2269,20 @@
         <td style="text-align: left">
           Same error message that received from position engine
         </td>
-        <td style="text-align: center">String</td>
+        <td style="text-align: left">String</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
-  <h2 id="checkresetsdkrequest">CheckResetSDKRequest</h2>
+  </div>
+  <h2 id="checkresetsdkrequest" class="opensub">
+    
+ <span class="initialize-number">4.31</span>
+    CheckResetSDKRequest
+    <i class="fas fa-sort-down"></i>
+  </h2><div style="display:none;" class="intilazediiv">
+
   <p>
     Returns flag that you must reset SDK to continue positioning.
     <br />
@@ -1965,7 +2298,7 @@
       <tr>
         <th style="text-align: left">Value</th>
         <th style="text-align: left">Description</th>
-        <th style="text-align: center">Value Type</th>
+        <th style="text-align: left">Value Type</th>
       </tr>
     </thead>
     <tbody>
@@ -1974,13 +2307,15 @@
         <td style="text-align: left">
           Positioning will stop if reset SDK flag is true.
         </td>
-        <td style="text-align: center">Boolean</td>
+        <td style="text-align: left">Boolean</td>
       </tr>
     </tbody>
   </table>
   <br />
   <br />
   <br />
+  </div>
+  <br>
   <h1 id="sdk-integration-flow-chart" class="custom-header">
     SDK Integration Flow Chart
   </h1>
@@ -1995,7 +2330,10 @@
   <h2 id="initialization-flow-chart">Initialization Flow Chart</h2>
   <br />
   <p>
-    <img src="img/image2.png" alt="" />
+    <div class="ctn">
+
+      <img src="./img/image2.png" alt="iOSLocationPermission" class="left" style="width: 40%;" />
+  </div>
     <br />
   </p>
   <h2 id="free-style-get-position-flow-chart">
@@ -2003,24 +2341,78 @@
   </h2>
   <br />
   <p>
-    <img src="img/image3.png" alt="" />
+    <div class="ctn">
+
+      <img src="./img/image3.png" alt="iOSLocationPermission" class="left" style="width: 40%;" />
+  </div>
     <br />
     <br />
   </p>
   <h2 id="navigation-mode-flow-chart">Navigation Mode Flow Chart</h2>
   <br />
   <p>
-    <img src="img/image4.png" alt="" />
+    <div class="ctn">
+
+      <img src="./img/image4.png" alt="iOSLocationPermission" class="left" style="width: 40%;" />
+  </div>
     <br />
     <br />
   </p>
 
 
-  <a href="faq.html" class="fqalink">PenguinIN's FAQ</a>
-  <h2 id="for-any-questions-and-comments-please-send-us-a-message-to-infopenguinincom">
-    For any questions and comments, please send us a message to
-    <strong><a href="mailto:support@penguinin.com" style="display: inherit;">support@penguinin.com</a></strong>
-  </h2>
+
+    <p>If you have a question, please check our <a href="faq.html" class="fqalink">FAQ page</a>, or send us a message to <strong><a href="mailto:support@penguinin.com" style="display: inherit;">support@penguinin.com</a></strong></p>
+
+<br>
 </body>
 
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    const btnandroid = document.querySelector('#parentAndroid');
+    btnandroid.addEventListener('click', e => {
+        $(".childiv").removeClass("closep")
+        // $(".childiv").removeClass("childiv2")
+
+        $(".childiv").toggleClass("childiv2")
+
+
+
+
+    })
+
+    document.querySelectorAll('.closelist').forEach(item => {
+        item.addEventListener('click', event => {
+            $(".childiv").removeClass("childiv2")
+
+            $(".childiv").addClass("closep")
+        })
+    })
+
+
+   
+
+    $('.opensub').on('click', function () {
+        $('.opensub').removeClass("custom-subheading");
+        $(this)
+            .toggleClass("custom-subheading")
+            .next('div.intilazediiv')
+            .toggleClass("intilazediv")
+            .siblings('div.intilazediiv')
+            .removeClass('intilazediv');
+        $(this)
+            .children('i')
+            .toggleClass('fa-sort-down fa-sort-up')
+            .parent('h2.opensub')
+            .siblings('h2.opensub')
+            .find('i')
+            .removeClass('fa-sort-up')
+            .addClass('fa-sort-down')
+        // .toggleClass("intilazediv").parent('div').find('div.intilazediiv').removeClass('intilazediv')
+        const $nextDiv = $(this).next('div.intilazediiv');
+        if (!$nextDiv.hasClass('intilazediv')) {
+            $(this).removeClass("custom-subheading");
+        }
+    })
+</script>
