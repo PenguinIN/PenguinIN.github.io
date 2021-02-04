@@ -8,8 +8,7 @@
   <style>
     
     .androidcontant-img {
-      /* transform: scale(0.7); */
-      /* transform-origin: bottom left; */
+  
       max-width: 700px !important;
       max-height: 1400px;
     }
@@ -29,12 +28,7 @@
   <link rel="stylesheet"
     href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css" />
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI',
-        system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
-      font-size: 14px;
-      line-height: 1.6;
-    }
+   
   </style>
   <style>
     .task-list-item {
@@ -55,14 +49,14 @@
 
     <a href="index.html" class="site-logo">
       <img src="./img/logo.png" alt="Site Name">
-      <h2 class="title">Penguin<span>in</span> Developer</h2>
+      <h2 class="title" style="font-weight:550">Penguin<span>in</span> Developer</h2>
     </a>
   </div>
 
 
 
 
-  <h1 id="android-documentation---v400">Android Documentation - v4.0.0</h1>
+  <h1 id="android-documentation---v400" style="font-weight: bold;">Android Documentation - v4.0.0</h1>
   <h2 id="table-of-contents">Table of Contents</h2>
 
   <div style="font-weight: bold;">
@@ -72,10 +66,10 @@
     </p>
     <p><a href="#sample-application">2 Sample Application </a></p>
     <p>
-      <a href="#sdk-and-sample-app-configuration">3 SDK and Sample App Configuration</a>
+      <a href="#sdk-and-sample-app-configuration">3 SDK  Configuration</a>
     </p>
     <p id="parentAndroid">
-      <a href="#sdk:-methods-and-integration">4 SDK: Methods and Integration
+      <a href="#sdk:-methods-and-integration">4 SDK Methods and Integration
       </a>
 
     <div style="margin-left: 10px;" class="childiv">
@@ -122,20 +116,20 @@
       <a href="#sdk-integration-flow-chart">5 SDK Integration Flow Chart</a>
     </p>
   </div>
-  <h1 id="sdk-and-sample-application-delivery" class="custom-header">
+  <h1  id="sdk-and-sample-application-delivery" class="custom-header">
     SDK and Sample Application Delivery
   </h1>
   <p>
-   The SDK is shared as an <strong>.aar</strong> file and the sample application as a build-able
+   The Android SDK is shared as an <strong>.aar</strong> file and the sample application as a build-able
     source code to generate the required <strong>.apk</strong> file. This file
     can be integrated in Android Studio via Gradle file. Please note that the
     .aar file needs to be integrated into Lib (Library) folder, then in the
     project Build.gradle file.
 </p>
   <p>
-    To Download the Android SDK and Sample app <a
-      href="https://penguinin-my.sharepoint.com/:f:/p/devsupport/Euj7LNk2fkBDrTWIULPYhYYBRkE1l14k5g-A0l_PtEH07Q?e=5Kf9YL"
-      style="display: inline;" class="fqalink">click here.</a>
+    To Download the Android SDK and Sample app <a 
+      href="https://penguinin-my.sharepoint.com/:f:/p/devsupport/Euj7LNk2fkBDrTWIULPYhYYBRkE1l14k5g-A0l_PtEH07Q?e=M0H1OD"
+      style="display: inline;font-weight: bold; text-decoration: underline;"  target="_blank" class="fqalink">Click here.</a>
 
   </p>
   <h1 id="sample-application" class="custom-header">Sample Application</h1>
@@ -143,12 +137,12 @@
 
     The sample application has two modes of operation:
       <ul>
-            <li>Simulation mode (for more info about simulation <a style="display: inline; text-decoration: underline;" href="simulation.html">click here</a> )</li>
+            <li>Simulation mode (for more info about simulation <a style="display: inline; text-decoration: underline;font-weight: bold;"  target="_blank" href="simulation.html">Click here.</a> )</li>
             <li> Live mode</li>
         </ul>
     In simulation mode, the application runs a
     pre-configured
-    scenario with pre-determined list of positions. This position is intended for development phase. In live mode, the position
+    scenario with pre-determined list of positions. This mode is intended for development phase. In live mode, the position
     is fetched from the position engine service and of course requires
     complete BLE beacon roll-out and site calibration data to have been
     completed. In both modes, connectivity to the position engine service and
@@ -158,33 +152,37 @@
   <ul>
     <li>
       <p>Install Sample App. You may need to build the sample app code to generate the needed <strong>.apk </strong> file. Grant all permissions manually as shown in the screen capture below:</p>
-      <div class="ctn">
+      <div class="ctn" style=" margin-top: 20px;
+      margin-bottom: 20px;">
 
-        <img src="img/Permission.jpeg" alt="iOSLocationPermission" class="left" style="width: 30%;" />
+        <img src="img/Permission.jpeg" alt="iOSLocationPermission" class="left" style="width: 25%;" />
     </div>
       
-      <br />
     </li>
     <li>
       <p>
         Run the sample app. Click on Load Data button. This fetches all required data from the service over APIs:
         <br />
-        <!-- <img src="img/Login.jpeg" class="androidcontant-img" style="zoom: 33%; margin-top: 25px" /> -->
-        <!-- <img src="img/DataLoaded.jpeg" class="androidcontant-img" style="zoom: 33%" /> -->
-      
-      
-
-      <div style="display:flex; justify-content: left;" >
-        <div style="height:auto" >
-            <img src="img/Login.jpeg" style="max-width: 40%;height: auto;width: auto\9;"/>
+       
+      <div style="display:flex; width: 80%;
+      justify-content: center;
+      align-items: center;
+      margin: auto; margin-top: 20px;
+      margin-bottom: 20px;";>
+        <div style="width: 50%;">
+            <img src="img/Login.jpeg" style="max-width: 50%;
+            height: auto;
+            display: block;
+            margin-left: auto;"/>
         
            
         </div>
-        <div style="height: auto;">
-            <img src="img/DataLoaded.jpeg" style="max-width: 40%;height: auto;width: auto\9;"/>
+        <div style="width: 50%; margin: 0 39px;">
+            <img src="img/DataLoaded.jpeg" style="max-width: 50%;         
+            height: auto;
+            display: block;"/>
         </div>
     </div>
-        <br />
       </p>
     </li>
     <li>
@@ -192,12 +190,12 @@
         To further ensure that the data has indeed been loaded successfully, click on the DB button and review that data which has been loaded to the SQLite tables.
         <br />
 
-         <div class="ctn">
+         <div class="ctn" style=" margin-top: 20px;
+         margin-bottom: 20px;">
 
           <img src="img/DB.jpeg" alt="iOSLocationPermission"  style="width: 20%;" />
 
       </div>
-        <br />
       </p>
     </li>
     <li>
@@ -206,20 +204,20 @@
     <li>
       <p>
         After logging in, the map appears with the blue dot that shows the current
-        user location. This is blue dot is based on a simulated position.
+        user location. This is blue dot is based on a simulated position. A single hardcoded POI has been defined to demonstrate the
+        navigation feature (shown as a grey square highlighted in red square). Simply click on the highlighted POI zone on the
+        map and click on start navigation.
         <br />
 
         <div class="ctn">
 
-          <img src="img/Main.jpeg" alt="androidcontant-img"  style="width: 20%;" />
+          <img src="img/Android_withPOI.jpeg" alt="androidcontant-img"  style="width: 20%;" />
 
       </div>
         <br />
       </p>
       <p>
-        A single hardcoded and highlighted POI has defined to demonstrate the
-        navigation example. Simply click on the highlighted POI zone on the
-        map and click on start navigation.
+        
         <br />
       </p>
 
@@ -238,11 +236,11 @@
         <p class=MsoNormal style='text-align:justify;line-height:normal'><span
        >PenNav has two
         wayfinding modes, namely: free-style and navigation. In free-style the user
-        does not specify a specific destination and the position returned from the SDK
+        does not specify a destination. The position returned from the SDK
         reflects the current position of the user. In navigation mode, the user
         specifies a destination POI. The API offers a shortest path route from the
-        current position to the POI entrance location. The route is returned as a list
-        of edges. In this mode, an up-to-date position along this path is returned by
+        current position to the POI entrance location. This route is returned as a list
+        of edges. In this mode, an up-to-date position along the navigation path is returned by
         the SDK. The map image, the route and the location along the route must be
         drawn by the app developer according to the intended UI rendering guidelines. If
         the user deviates from the pre-calculated route, the SDK returns a wrong-path
@@ -251,27 +249,28 @@
         
         <p class=MsoNormal style='text-align:justify;line-height:normal'><span
         >In a multi-floor
-        and/or multi-venue navigation scenario, the SDK returns the venue (i.e.
+        and/or multi-venue navigation scenario, the SDK continuously returns the venue (i.e.
         building) and the floor which shall be used by the app developer to update the
         currently displayed map image. </span></p>
         
         <p class=MsoNormal style='text-align:justify;line-height:normal'><span
       >The app developer
-        may also call the API to list all available PoIs to build – for example – a
+        may also call the API to list all available POIs to create – for example – a
         directory listing inside the app. Furthermore, the app developer shall use the
         API to retrieve the map image for a particular floor. They can also use the API
         to return the zone (defined as a polygon) which defines the boundaries of a
-        particular PoI on the map image. This zone definition can be leveraged in
-        creating interactive zones using gesture interactions with the map image. This
+        particular POI on the map image. This zone definition can be leveraged in
+        creating gesture interactions with the map image. This
         feature is implementation specific. </span></p>
         
         <p class=MsoNormal style='text-align:justify;line-height:normal'><span
       >The above is only a
         brief listing of the capabilities of the API. For a comprehensive list, the
-        app-developer is referred to API documentation.</span></p>
-        
-        <p class=MsoNormal style='line-height:normal'><span >We offer a hardcoded sample PoI within the
-        sample app. It can be changed in the sample app code, by opening the
+        app-developer is referred to   <a class=""  style="display: inherit;
+        font-weight: bold; cursor: pointer;   text-decoration: underline;" href="https://app.swaggerhub.com/apis-docs/Penguin-IN/PenNav/0.2" target="_blank">the API documentation.</a></span></p>
+
+        <p class=MsoNormal style='line-height:normal'><span > Within the
+        sample app, we offer a hardcoded sample POI. It can be changed in the sample app code, by opening the
         com.penguinin_sampleData.Model.PoI\POI \Constructor, and modifying the
         following parameters: </span></p>
         
@@ -287,31 +286,30 @@
            >Zone Points.</span></li>
         </ul>
         
-        <p class=MsoNormal style='line-height:normal'><span >The PoI must exist in the list of
-        available PoIs for it to be reflect correctly in the sample app. The snippet
-        below shows the PoI description:</span></p>
-        
-        <!-- <p class=MsoNormal style='line-height:normal'><img width=624 height=225
-        id="Picture 3" src="UpdatedSampleConfig777_files/image001.png"></p> -->
-        <div class="ctn">
+        <p class=MsoNormal style='line-height:normal'><span > However, the POI must exist in the list of
+        available POIs for it to be reflected correctly in the sample app. The snippet
+        below shows the POI description:</span></p>
+       
+        <div class="ctn" style="justify-content:left;
+        margin-top: 20px;
+      margin-bottom: 20px;">
 
           <img src="img/androidupdate.png" alt="androidcontant-img"  style="width: 40%;" />
-
+          
       </div>
         <p class=MsoNormal style='line-height:normal'><span >For speed of development, the simulator
         mode offers scenarios for free-style and navigation modes. To access these scenarios,
         change the <b>Username</b> from Sample code in
         com.penguinin_sample\MainActivity\onCreate. List of available usernames (i.e.
-        scenarios) are  available here. For live mode should be a unique ID for every
+        scenarios) are  available <a style="display: inline; text-decoration: underline;font-weight: bold;"  target="_blank" href="simulation.html">here.</a> For live mode, the username shall be a unique ID for every
         user device. For example, device ID can be used as this unique ID. </span></p>
-        
-        <div class="ctn">
+        <div class="ctn" style="justify-content:left; 
+        margin-top: 20px;
+      margin-bottom: 20px;">
 
           <img src="img/androidupdate2.png" alt="androidcontant-img"  style="width: 50%;" />
 
       </div>
-        <!-- <p class=MsoNormal style='line-height:normal'><img width=624 height=143
-        id="Picture 4" src="UpdatedSampleConfig777_files/image002.png"></p> -->
         
         <p class=MsoNormal style='line-height:normal'>To switch between live and simulation
         mode, you can enable/disable the SDK parameter </span>Simulation Mode flag.</p>
@@ -321,23 +319,6 @@
         
         <p class=MsoNormal></p>
         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </li>
   </ul>
@@ -401,7 +382,7 @@
     <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Returns initialization success or failure as Boolean value.
     <br />
   </p>
@@ -494,7 +475,7 @@
     isReady  <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Returns a Boolean value indication, that all needed requirements are ready
     and you can start calling other methods.
     <br />
@@ -531,7 +512,7 @@
     <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Returns current error code if it exists.
     <br />
   </p>
@@ -567,7 +548,7 @@
     <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Returns current warning code if it exists.
     <br />
   </p>
@@ -604,7 +585,7 @@
     <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Returns error message from Error Code Look Up table.
     <br />
   </p>
@@ -710,6 +691,18 @@
         <td>14</td>
         <td>GPS Disabled</td>
       </tr>
+      <tr>
+        <td>15</td>
+        <td>Loading Data Error</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Default Venue Not Found</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Default Floor Not Found</td>
+      </tr>
     </tbody>
   </table>
   <br />
@@ -721,7 +714,7 @@
   <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Returns warning message from Warning Code Look Up table.
     <br />
   </p>
@@ -805,7 +798,7 @@
   
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>Set the position mode and scanning time frequency:</p>
+  <p style="font-weight: bold;">Set the position mode and scanning time frequency:</p>
   <ul>
     <li>
       Background:
@@ -913,11 +906,12 @@
     <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Returns last detected position concatenated together with &quot;_&quot;
     separator:
   </p>
   <ul>
+    <li>Current Venue ID.</li>
     <li>Current Floor ID.</li>
     <li>Position point (X, Y).</li>
     <li>Accuracy circle radius in pixels.</li>
@@ -934,24 +928,20 @@
   <h3 id="operation-1">Operation</h3>
   <ul>
     <li>
-      Concatenate FloorID, X, Y, Accuracy Circle Radius , Current Edge ID
+      Concatenate VenueID, FloorID, X, Y, Accuracy Circle Radius , Current Edge ID
       together with &quot;_&quot; separator:
       <ul>
         <li>
           Ex:
           <ul>
+            <li>Current Venue ID: 1.</li>
             <li>Current Floor ID: 2.</li>
             <li>My Position (X, Y): (3000, 5100).</li>
             <li>Accuracy radius in pixels: 120.</li>
             <li>Current Edge ID: 150.</li>
             <li>
-              Result:
-              <ul>
-                <li>
-                  2_3000_5100_120_150<br />
-                  <br />
-                </li>
-              </ul>
+              Result: 2_3000_5100_120_150.
+
             </li>
           </ul>
         </li>
@@ -976,7 +966,7 @@
       <tr>
         <td style="text-align: left">Position</td>
         <td style="text-align: left">
-          FloorID, X, Y, Accuracy Circle Radius , Current Edge ID<br />Concatenated
+          VenueID, FloorID, X, Y, Accuracy Circle Radius , Current Edge ID<br />Concatenated
           together with &quot;_&quot; separator
         </td>
         <td style="text-align: left">String</td>
@@ -993,7 +983,7 @@
   
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Projects any point (X, Y) (i.e. chosen from the map or any other source)
     onto the defined edges. Use of such point depends on the enabled mode:
     background, freestyle, navigation.
@@ -1061,7 +1051,7 @@
   
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Set current floor ID.
     <br />
   </p>
@@ -1118,7 +1108,7 @@
     <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Start positioning on the given navigation path.
     <br />
   </p>
@@ -1226,7 +1216,7 @@
     <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Stop navigation positioning and go back to freestyle mode positioning.
     <br />
   </p>
@@ -1274,7 +1264,7 @@
   
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Set the test position mode and scanning time frequency.
     <br />
   </p>
@@ -1344,7 +1334,7 @@
     <div style="display:none;" class="intilazediiv">
 
 
-  <p>
+  <p style="font-weight: bold;">
     Set the test <strong>navigation</strong> position mode and scanning time
     frequency.
     <br />
@@ -1467,7 +1457,7 @@
 
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Returns SDK’s current version number.
     <br />
   </p>
@@ -1504,7 +1494,7 @@
   
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Sets data API service name.
     <br />
   </p>
@@ -1543,7 +1533,7 @@
   </h2>
 
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Sets position service name.
     <br />
   </p>
@@ -1579,7 +1569,7 @@
     <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Enables positioning dependency on steps.
     <br />
   </p>
@@ -1617,7 +1607,7 @@
   </h2>
 
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Enables positioning simulation mode.
     <br />
   </p>
@@ -1661,7 +1651,7 @@
     <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Sets positioning venue ID.
     <br />
   </p>
@@ -1702,7 +1692,7 @@
     <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Returns SDK initialization progress status.
     <br />
   </p>
@@ -1764,7 +1754,7 @@
     <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Returns SDK current navigation path (Venue, Floor, Edges, List, etc.).
     <br />
   </p>
@@ -1901,7 +1891,7 @@
     <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Returns navigation error path flag.
     <br />
   </p>
@@ -1936,7 +1926,7 @@
     <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Returns flag that your position floor is out of all navigation path.
     <br />
   </p>
@@ -1973,7 +1963,7 @@
      <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Enables or disables <strong>Wi-Fi</strong> positioning.
     <br />
   </p>
@@ -2023,7 +2013,7 @@
   
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Enables or disables <strong>BLE</strong> positioning.
     <br />
   </p>
@@ -2072,7 +2062,7 @@
   </h2>
   
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Returns Position Server Connectivity Status.
     <br />
   </p>
@@ -2140,7 +2130,7 @@
     <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Returns Floor Transition Status.
     <br />
   </p>
@@ -2207,7 +2197,7 @@
     <i class="fas fa-sort-down"></i>
   </h2>
   <div style="display:none;" class="intilazediiv">
-  <p>
+  <p style="font-weight: bold;">
     Returns Position engine’s Floor Trusted Flag.
     <br />
   </p>
@@ -2245,7 +2235,7 @@
   </h2>
   <div style="display:none;" class="intilazediiv">
   
-  <p>
+  <p style="font-weight: bold;">
     Returns error message that received from position engine.
     <br />
   </p>
@@ -2283,7 +2273,7 @@
     <i class="fas fa-sort-down"></i>
   </h2><div style="display:none;" class="intilazediiv">
 
-  <p>
+  <p style="font-weight: bold;">
     Returns flag that you must reset SDK to continue positioning.
     <br />
   </p>
@@ -2332,9 +2322,9 @@
   <p>
     <div class="ctn">
 
-      <img src="./img/image2.png" alt="iOSLocationPermission" class="left" style="width: 40%;" />
+      <img src="./img/image2.png" alt="iOSLocationPermission" class="left" style="width: 40%; border: 3px solid #7b8ca3;
+      padding: 20px;" />
   </div>
-    <br />
   </p>
   <h2 id="free-style-get-position-flow-chart">
     Free Style/ Get Position Flow Chart
@@ -2343,9 +2333,9 @@
   <p>
     <div class="ctn">
 
-      <img src="./img/image3.png" alt="iOSLocationPermission" class="left" style="width: 40%;" />
+      <img src="./img/image3.png" alt="iOSLocationPermission" class="left" style="width: 40%; border: 3px solid #7b8ca3;
+      padding: 20px;" />
   </div>
-    <br />
     <br />
   </p>
   <h2 id="navigation-mode-flow-chart">Navigation Mode Flow Chart</h2>
@@ -2353,9 +2343,9 @@
   <p>
     <div class="ctn">
 
-      <img src="./img/image4.png" alt="iOSLocationPermission" class="left" style="width: 40%;" />
+      <img src="./img/image4.png" alt="iOSLocationPermission" class="left" style="width: 40%; border: 3px solid #7b8ca3;
+      padding: 20px;" />
   </div>
-    <br />
     <br />
   </p>
 
@@ -2373,22 +2363,22 @@
     const btnandroid = document.querySelector('#parentAndroid');
     btnandroid.addEventListener('click', e => {
         $(".childiv").removeClass("closep")
-        // $(".childiv").removeClass("childiv2")
 
         $(".childiv").toggleClass("childiv2")
-
-
-
+        
 
     })
 
     document.querySelectorAll('.closelist').forEach(item => {
         item.addEventListener('click', event => {
             $(".childiv").removeClass("childiv2")
+             var ele =$($(item).children()[0]).attr("href")
+             $(ele).click()
 
             $(".childiv").addClass("closep")
         })
     })
+
 
 
    
@@ -2400,7 +2390,8 @@
             .next('div.intilazediiv')
             .toggleClass("intilazediv")
             .siblings('div.intilazediiv')
-            .removeClass('intilazediv');
+            .removeClass('intilazediv')
+
         $(this)
             .children('i')
             .toggleClass('fa-sort-down fa-sort-up')

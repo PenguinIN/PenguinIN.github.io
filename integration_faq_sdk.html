@@ -43,132 +43,133 @@
 
 
   <br>
-  <h1 id="integration-and-sdk---v400">Integration and SDK - v4.0.0</h1>
-  <p><a href="#scope" style="text-align: left;">1 Scope </a></p>
-  <p><a href="#glossary" style="text-align: left;">2 Glossary</a></p>
-  <p><a href="#before-beginning" style="text-align: left;">3 Before Beginning</a></p>
-  <br>
+  <h1 id="integration-and-sdk---v400" style="font-weight: bold;">Integration and SDK - v4.0.0</h1>
+  <p><a href="#scope" style="text-align: left;font-weight: bold;">1 Scope </a></p>
+  <p><a href="#glossary" style="text-align: left;font-weight: bold;">2 Glossary</a></p>
+  <p><a href="#before-beginning" style="text-align: left;font-weight: bold;">3 Before Beginning</a></p>
   <br>
   <h1 id="scope" class="custom-header">Scope</h1>
   <p>In this section of the documentation we describe how to create the conditions required to start developing and
-    integrating the SDK. It also describes what to expect in terms of outcome from the sample application and SDK
-    during development and before starting field trials.</p>
+    integrating the SDK.</p>
   <br>
   <br>
   <h1 id="glossary" class="custom-header">Glossary</h1>
   <table>
     <thead>
       <tr>
-        <th style="text-align:center">Term</th>
+        <th style="text-align:left">Term</th>
         <th>Meaning</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td style="text-align:center">IDE</td>
+        <td style="text-align:left">IDE</td>
         <td>Acronym for Integrated Development Environment.</td>
       </tr>
       <tr>
-        <td style="text-align:center">Android Studio</td>
+        <td style="text-align:left">Android Studio</td>
         <td>Android app development IDE.</td>
       </tr>
       <tr>
-        <td style="text-align:center">Beacon</td>
+        <td style="text-align:left">Beacon</td>
         <td>BLE sensor device that sends data packets.</td>
       </tr>
       <tr>
-        <td style="text-align:center">BLE</td>
+        <td style="text-align:left">BLE</td>
         <td>Acronym for Bluetooth Low Energy. BLE is a wireless personal area network technology designed and
           marketed by the Bluetooth Special Interest Group aimed at novel applications in the healthcare,
           fitness, beacons, security, and home entertainment industries.</td>
       </tr>
       <tr>
-        <td style="text-align:center">CMS</td>
+        <td style="text-align:left">CMS</td>
         <td>Acronym for Content Management System.</td>
       </tr>
       <tr>
-        <td style="text-align:center">GPS</td>
+        <td style="text-align:left">GPS</td>
         <td>Acronym for Global Positioning System.</td>
       </tr>
       <tr>
-        <td style="text-align:center">Heading</td>
+        <td style="text-align:left">Heading</td>
         <td>Synonym of ‘Orientation’.</td>
       </tr>
       <tr>
-        <td style="text-align:center">Host app</td>
+        <td style="text-align:left">Host app</td>
         <td>Application hosting PenguinIN’s SDK.</td>
       </tr>
       <tr>
-        <td style="text-align:center">JSON</td>
+        <td style="text-align:left">JSON</td>
         <td>A data exchange format, Acronym for JavaScript Object Notation.</td>
       </tr>
       <tr>
-        <td style="text-align:center">Orientation</td>
+        <td style="text-align:left">Orientation</td>
         <td>The direction where the mobile is heading.</td>
       </tr>
       <tr>
-        <td style="text-align:center">OS</td>
+        <td style="text-align:left">OS</td>
         <td>Acronym for Operating System.</td>
       </tr>
       <tr>
-        <td style="text-align:center">UI</td>
+        <td style="text-align:left">UI</td>
         <td>Acronym for User Interface.</td>
       </tr>
       <tr>
-        <td style="text-align:center">Wi-Fi</td>
+        <td style="text-align:left">Wi-Fi</td>
         <td>Technology that uses radio waves to provide network connectivity.</td>
       </tr>
       <tr>
-        <td style="text-align:center">X-coordinate</td>
+        <td style="text-align:left">X-coordinate</td>
         <td>Horizontal coordinate in a grid.</td>
       </tr>
       <tr>
-        <td style="text-align:center">Y-coordinate</td>
+        <td style="text-align:left">Y-coordinate</td>
         <td>Vertical coordinate in a grid.</td>
       </tr>
       <tr>
-        <td style="text-align:center">Z-coordinate</td>
-        <td>Depth coordinate.</td>
+        <td style="text-align:left">Z-coordinate</td>
+        <td>Height.</td>
       </tr>
     </tbody>
   </table>
   <br>
   <br>
   <h1 id="before-beginning" class="custom-header">Before Beginning</h1>
-  <p>The application developer receives  SDK and a companion sample mobile application which integrates the SDK and
+  
+  <p>The application developer receives  SDK and a companion sample app which integrates the SDK and
     shows additional basic functionality including presenting location on map and navigation. However, in order for
-    the sample application to run, there must be a BLE beacon present and configured correctly with the parameters in
+    the sample app to return positions, there must be a BLE beacon present and configured correctly with the parameters in
     the table below:</p>
+    <br>
   <table>
     <thead>
       <tr>
-        <th style="text-align:center">Paramter</th>
+        <th style="text-align:left">Paramter</th>
         <th>Value</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td style="text-align:center">Protocol</td>
+        <td style="text-align:left">Protocol</td>
         <td>iBeacon</td>
       </tr>
       <tr>
-        <td style="text-align:center">UUID</td>
+        <td style="text-align:left">UUID</td>
         <td>A2C56DB5-DFFB-48D2-B060-D0F5A71096E0</td>
       </tr>
       <tr>
-        <td style="text-align:center">Major</td>
+        <td style="text-align:left">Major</td>
         <td>500</td>
       </tr>
       <tr>
-        <td style="text-align:center">Minor</td>
+        <td style="text-align:left">Minor</td>
         <td>2</td>
       </tr>
       <tr>
-        <td style="text-align:center">Tx Power</td>
+        <td style="text-align:left">Tx Power</td>
         <td>-65</td>
       </tr>
     </tbody>
   </table>
+  <br>
   <p>In the likely event that the application developer does not have a physical beacon, then one of many simulator
     beacon tools can be used. Below is an example of such a tool and the steps used to configure this tool with the
     above parameters.</p>
@@ -202,23 +203,23 @@
   <div class="wrapper" style="text-align: center;width:auto;margin:15px">
 
     
-    <div class=" buttonlink" style="display: inline-block;margin-right: 40px;">
+    <div class=" buttonlink" style="display: inline-block;margin-right: 40px;  cursor: pointer" onclick="location.href='android.html';">
       <div >
         <img src="./img/android_robot.svg" class="icon" alt="Android" style="width:45% ;margin-top: 5px;">
       </div>
       <div >
-        <p><a href="android.html" style="line-height:1.1em">Android</a></p>
+        <p><a href="android.html" class="api" style="line-height:1.1em;font-weight: bold;">Android</a></p>
       </div>
     </div>
 
    
 
-    <div class="buttonlink"  style="display: inline-block;">
+    <div class="buttonlink"  style="display: inline-block;  cursor: pointer"  onclick="location.href='ios.html';">
       <div>
         <img src="./img/apple_symbol.svg" class="icon" alt="Apple icon" style="width:45% ;margin-top: 5px;">
       </div>
       <div>
-        <p><a href="ios.html"  style="line-height:1.1em">IOS </a></p>
+        <p><a href="ios.html"  class="api" style="line-height:1.1em; font-weight: bold;">iOS </a></p>
       </div>
     </div>
 

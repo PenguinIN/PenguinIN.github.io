@@ -39,7 +39,7 @@
     </a>
   </div>
 
-  <h1 id="introduction"><strong>Over View Developer</strong></h1>
+  <h1 id="introduction"><strong>Developer Overview </strong></h1>
   <p>The PenguinIN indoor wayfinding solution (PenNav) consists of a fully managed, cloud-hosted positioning engine and
     an
     SDK which is to be integrated within a venue’s mobile app. It enables visitors to access wayfinding functionality
@@ -66,38 +66,43 @@
       mobile application must be able to reach this service in order for the an up-to-date position to be established.
     </li>
     <li>Application Programming Interface: information required by 3rd party app developers is made available
-      through an API. This - for example - includes the map image, the list of points-of-interest, possible routes, enterance locations to points of interest and other information. </li>
+      through an API. This - for example - includes the map image, the list of points-of-interest, possible routes,
+      enterance locations to points of interest and other information. </li>
   </ul>
 
 
-  
+
 
 
 
   <div class="wrapper" style="text-align: center;width:auto;margin:15px">
 
-  
 
-    <div class="buttonlink" style="display: inline-block;margin-right: 40px;">
+
+    <div class="buttonlink" id="sdkbtn" style="display: inline-block;margin-right: 40px; cursor: pointer"
+      onclick="location.href='integration_faq_sdk.html';">
       <div>
         <img src="./img/sdknew2.png" class="icon" alt="sdk" style="width:44% ;margin-top:5px;">
       </div>
       <div class="">
-        <p><a href="integration_faq_sdk.html"  style="line-height:1.1em">SDK</a></p>
+        <p style="font-weight: bold;">
+          <a href="integration_faq_sdk.html" class="api" style="line-height:1.1em; font-weight:bold;">SDK</a>
+          </p>
       </div>
     </div>
 
-  
 
 
-    <div class="buttonlink"  style="display: inline-block;">
+
+    <a class="buttonlink api" id="apibtn" style="display: inline-block; cursor: pointer"
+      href="https://app.swaggerhub.com/apis-docs/Penguin-IN/PenNav/0.2" target="_blank">
       <div>
-        <img src="./img/swaggeer.png" class="icon" alt="swagger" style="width:45% ;margin-top: 5px;">
+        <img src="./img/swaggeer.png" class="icon" alt="swagger" style="width:41% ;margin-top: 5px;">
       </div>
       <div>
-        <p><a href="https://app.swaggerhub.com/apis-docs/Penguin-IN/PenNav/0.2"  style="line-height:1.1em">Swagger </a></p>
+        <p style="line-height:1.1em ;font-weight: bold;">API</p>
       </div>
-    </div>
+    </a>
 
 
 
@@ -106,11 +111,13 @@
 
   </div>
 
-  <p>If you have a question, please check our <a href="faq.html" class="fqalink">FAQ page</a>, or send us a message to <strong><a href="mailto:support@penguinin.com" style="display: inherit;">support@penguinin.com</a></strong></p>
+  <p>If you have a question, please check our <a href="faq.html" class="fqalink">FAQ page</a>, or send us a message to
+    <strong><a href="mailto:support@penguinin.com" style="display: inherit;">support@penguinin.com</a></strong>
+  </p>
 
 
 
- 
+
 </body>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
@@ -118,3 +125,12 @@
 <header class="site-header">
 
 </html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+
+
+
+
+
+</script>
