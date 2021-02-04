@@ -23,10 +23,10 @@ font-size: 17px;
 
 .title {
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: bold;
   margin-bottom: 0;
   color: black;
-  font-family: 'Poppins', Arial, Tahoma, sans-serif;
+  /* font-family: 'Poppins', Arial, Tahoma, sans-serif; */
 }
 
 .buttonlink {
@@ -275,3 +275,4 @@ table tbody tr td {
   text-decoration: none !important;
   
 }
+
